@@ -47,12 +47,11 @@ export interface Network {
 
 export interface UDLData {
   title: MultilingualText;
+  version: MultilingualText;
+  acronym: MultilingualText;
   author: string;
   year: number;
   goal: MultilingualText;
-  whatIsUDL?: MultilingualText;
-  udlDescription?: MultilingualText;
-  udlPrinciples?: MultilingualText;
   networks: Network[];
   terminology?: any; // Model-specific terminology
   appVersion?: string;
@@ -80,4 +79,31 @@ export interface SearchResult {
   item: Principle | Guideline | Consideration;
   principleName?: MultilingualText;
   guidelineName?: MultilingualText;
+}
+
+// Example types
+export interface WebTool {
+  name: string;
+  url: string;
+  logo: string;
+}
+
+export interface Example {
+  id: string;
+  code: string;
+  color: string;
+  educationalLevel: MultilingualText;
+  curricularArea: MultilingualText;
+  activity: MultilingualText;
+  designOptions: MultilingualText;
+  webTools: WebTool[];
+}
+
+export interface ConsiderationExamples {
+  considerationId: string;
+  examples: Example[];
+}
+
+export interface GuidelineExamples {
+  considerations: ConsiderationExamples[];
 }
