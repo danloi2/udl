@@ -72,5 +72,9 @@ export const ui = derived([language, udlData], ([$language, $udlData]) => {
     webTools: uiTranslations.labels.webTools[$language],
     allEducationalLevels: uiTranslations.labels.allEducationalLevels[$language],
     allCurricularAreas: uiTranslations.labels.allCurricularAreas[$language],
+    udlAcronym: $udlData.acronym[$language],
+    example: uiTranslations.labels.example[$language],
+    activity: uiTranslations.labels.activity[$language],
+    designOptions: uiTranslations.labels.designOptions[$language],
   };
 });

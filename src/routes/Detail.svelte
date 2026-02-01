@@ -2,15 +2,15 @@
   import { link } from 'svelte-spa-router';
   import { language, t } from '../stores/language';
   import { ui } from '../stores/ui';
-  import { udlData, getConsiderationById, getGuidelineForConsideration, getPrincipleForConsideration, udlIndex } from '../stores/udlData';
+  import { udlData, getConsiderationById, getGuidelineForConsideration, getPrincipleForConsideration, udlIndex, getExampleById, getConsiderationForExample } from '../stores/udlData';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
   import Breadcrumbs from '../components/Breadcrumbs.svelte';
   import Tag from '../components/Tag.svelte';
   import MarkdownRenderer from '../components/MarkdownRenderer.svelte';
   import LevelBadge from '../components/model/LevelBadge.svelte';
-  import { ArrowLeft, LayoutGrid, Search } from 'lucide-svelte';
+  import { ArrowLeft, LayoutGrid, Search, Home } from 'lucide-svelte';
   import { getGuidelineStyles, getColorStyles } from '../utils/colors';
-  import type { Language, Consideration, Guideline, Principle } from '../types';
+  import type { Language, Consideration, Guideline, Principle, Example } from '../types';
 
   // Brain assets
   import affectiveLogo from '../assets/brains/affective_logo.svg';
@@ -31,6 +31,15 @@
   });
 
   $: itemData = (function() {
+    const e = getExampleById(params.id, $udlIndex);
+    if (e) {
+      const c = getConsiderationForExample(params.id, $udlIndex);
+      if (c) {
+        const g = getGuidelineForConsideration(c.id, $udlData);
+        const p = getPrincipleForConsideration(c.id, $udlData);
+        return { type: 'example', item: e, consideration: c, guideline: g, principle: p };
+      }
+    }
     const c = getConsiderationById(params.id, $udlIndex);
     if (c) {
       const g = getGuidelineForConsideration(params.id, $udlData);
@@ -49,7 +58,8 @@
     return null;
   })();
 
-  $: consideration = itemData?.type === 'consideration' ? (itemData.item as Consideration) : null;
+  $: example = itemData?.type === 'example' ? (itemData.item as Example) : null;
+  $: consideration = itemData?.type === 'consideration' ? (itemData.item as Consideration) : (itemData?.type === 'example' ? (itemData as any).consideration as Consideration : null);
   $: guideline = itemData?.guideline as Guideline | null;
   $: principle = itemData?.principle as Principle | null;
   
@@ -57,13 +67,29 @@
   $: logo = networkId ? brainLogos[networkId as keyof typeof brainLogos] : undefined;
   $: colors = guideline ? getGuidelineStyles(guideline) : (principle ? getColorStyles(principle.color || '#ccc') : undefined);
 
+  const truncate = (text: string, length: number = 40) => {
+    if (!text) return '';
+    if (text.length <= length) return text;
+    return text.substring(0, length) + '...';
+  };
+
   $: breadcrumbItems = [
-    { label: $ui.home, href: '/' },
-    { label: $ui.viewCompleteModel, href: '/model' },
-    ...(principle ? [{ label: t(principle.name, currentLang), href: `/detail/${principle.id}` }] : []),
-    ...(guideline && itemData?.type !== 'guideline' ? [{ label: `${guideline.code}. ${t(guideline.name, currentLang)}`, href: `/detail/${guideline.id}` }] : []),
-    ...(itemData?.type === 'guideline' && guideline ? [{ label: `${guideline.code}. ${t(guideline.name, currentLang)}` }] : []),
-    ...(itemData?.type === 'consideration' && itemData.item ? [{ label: `${(itemData.item as any).code}. ${t((itemData.item as any).description, currentLang)}` }] : []),
+    { label: '', href: '/', icon: Home },
+    ...(principle ? [{ 
+      label: itemData?.type === 'principle' ? t(principle.name, currentLang) : (principle.id === 'engagement' ? 'C' : principle.id === 'representation' ? 'R' : 'A'), 
+      href: `/detail/${principle.id}` 
+    }] : []),
+    ...(guideline && itemData?.type === 'guideline' ? [{ 
+      label: `${guideline.code}. ${t(guideline.name, currentLang)}`, 
+      href: `/detail/${guideline.id}` 
+    }] : []),
+    ...(consideration ? [{ 
+      label: itemData?.type === 'consideration' ? `${consideration.code}. ${t(consideration.description, currentLang)}` : consideration.code, 
+      href: `/detail/${consideration.id}` 
+    }] : []),
+    ...(itemData?.type === 'example' && example ? [{ 
+      label: `${example.code}. ${truncate(t(example.activity, currentLang), 50)}` 
+    }] : []),
   ];
 
   // Fix scroll position when navigating between items
@@ -105,7 +131,7 @@
     {#if itemData && colors}
       <!-- Breadcrumbs -->
       <div class="mb-6">
-        <Breadcrumbs items={breadcrumbItems} />
+        <Breadcrumbs items={breadcrumbItems} color={principle?.color} />
       </div>
 
       <!-- Main Card -->
@@ -134,14 +160,21 @@
               <div class="flex flex-col gap-1">
                 {#if principle?.color}
                   <Tag color={principle.color} 
-                       label={(principle.preDescription ? t(principle.preDescription, currentLang) + ' ' : '') + t(principle.name, currentLang)} />
+                       label={itemData.type === 'principle' && principle.preDescription 
+                         ? t(principle.preDescription, currentLang).trim() 
+                         : (principle.preDescription ? t(principle.preDescription, currentLang) + ' ' : '') + t(principle.name, currentLang)} />
                 {/if}
               </div>
             </div>
             <h1 class="text-3xl font-black text-gray-900 leading-tight max-w-2xl">
-              {#if itemData.type === 'consideration' && consideration}
+              {#if itemData.type === 'example' && example}
+                {example.code}. {t(example.activity, currentLang)}
+              {:else if itemData.type === 'consideration' && consideration}
                 {t(consideration.description, currentLang)}
               {:else if itemData.type === 'guideline' && guideline}
+                {#if guideline.preDescription}
+                  <span class="text-sm font-bold text-gray-500 block mb-1">{t(guideline.preDescription, currentLang)}</span>
+                {/if}
                 {t(guideline.name, currentLang)}
               {:else if itemData.type === 'principle' && principle}
                 {t(principle.name, currentLang)}
@@ -152,16 +185,89 @@
 
         <!-- Body -->
         <div class="px-8 py-8 space-y-8">
-          <!-- Item Context / PreDescription -->
-          {#if itemData.type === 'guideline' && guideline?.preDescription}
-            <div class="bg-gray-50 border-l-4 p-4 italic text-gray-600 rounded-r-lg" style="border-color: {principle?.color || '#ccc'}">
-              {t(guideline.preDescription, currentLang)}
-            </div>
-          {:else if itemData.type === 'principle' && principle?.preDescription}
-            <div class="bg-gray-50 border-l-4 p-4 italic text-gray-600 rounded-r-lg" style="border-color: {principle.color || '#ccc'}">
-              {t(principle.preDescription, currentLang)}
+          <!-- Example Detail View (Level 4 Template) -->
+          {#if itemData.type === 'example' && example}
+            <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Educational Context -->
+                <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-100">
+                  <h3 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-4">{$ui.educationalLevel}</h3>
+                  <div class="flex items-center gap-3">
+                    <div class="p-3 bg-white rounded-xl shadow-sm border border-blue-100">
+                      {#if example.id.startsWith('1')}
+                        <Search class="w-6 h-6 text-blue-600" />
+                      {:else}
+                         <LayoutGrid class="w-6 h-6 text-blue-600" />
+                      {/if}
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">{t(example.educationalLevel, currentLang)}</span>
+                  </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-purple-50/50 border border-purple-100">
+                  <h3 class="text-xs font-black uppercase tracking-widest text-purple-600 mb-4">{$ui.curricularArea}</h3>
+                  <div class="flex items-center gap-3">
+                    <div class="p-3 bg-white rounded-xl shadow-sm border border-purple-100">
+                      <LayoutGrid class="w-6 h-6 text-purple-600" />
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">{t(example.curricularArea, currentLang)}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="space-y-6">
+                <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm relative overflow-hidden group">
+                   <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                      <span class="text-9xl font-black italic select-none">{$ui.udlAcronym}</span>
+                   </div>
+                   <div class="relative z-10">
+                    <h3 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">{$ui.activity}</h3>
+                    <p class="text-2xl font-bold text-gray-900 leading-relaxed italic">
+                      " {t(example.activity, currentLang)} "
+                    </p>
+                   </div>
+                </div>
+
+                <div class="p-8 rounded-3xl text-white shadow-xl relative overflow-hidden"
+                     style="background-color: {principle?.color || '#1a1a1a'}">
+                   <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                   <div class="relative z-10">
+                    <h3 class="text-xs font-black uppercase tracking-widest text-white/60 mb-4">{$ui.designOptions}</h3>
+                    <div class="prose prose-invert prose-lg max-w-none">
+                      <p class="text-white font-bold leading-relaxed">
+                        {t(example.designOptions, currentLang)}
+                      </p>
+                    </div>
+                   </div>
+                </div>
+              </div>
+
+              <!-- Parent Context -->
+              {#if consideration}
+                <div class="pt-8 border-t border-gray-100">
+                  <h3 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-6">{$ui.allConsiderations}</h3>
+                  <a href="/detail/{consideration.id}" use:link class="flex items-center gap-6 p-6 rounded-2xl bg-white border border-gray-100 hover:border-blue-400 hover:shadow-lg transition-all group">
+                    <div class="w-16 h-16 shrink-0 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 group-hover:scale-110 transition-transform">
+                      <span class="font-mono text-xl font-black" style="color: {principle?.color}">{consideration.code}</span>
+                    </div>
+                    <div>
+                      <p class="text-gray-900 font-bold text-lg group-hover:text-blue-600 transition-colors">
+                        {t(consideration.description, currentLang)}
+                      </p>
+                      {#if guideline}
+                        <p class="text-gray-500 text-sm mt-1">{guideline.code}. {t(guideline.name, currentLang)}</p>
+                      {/if}
+                    </div>
+                  </a>
+                </div>
+              {/if}
             </div>
           {/if}
+
+          <!-- Existing content (for Guidelines and Considerations) -->
+          {#if itemData.type !== 'example'}
+            <!-- Item Context / PreDescription removed as it is in the badge -->
 
           <!-- Network Description (for Principles) -->
           {#if itemData.type === 'principle' && networkId}
@@ -236,13 +342,15 @@
                         <span class="font-mono text-xl font-black py-1 px-3 bg-white rounded-lg border shadow-sm" style="color: {principle.color}">
                           {g.code}
                         </span>
-                        <h3 class="text-lg font-black" style="color: {principle.color}">{t(g.name, currentLang)}</h3>
+                        <div>
+                          {#if g.preDescription}
+                            <p class="text-gray-500 text-xs italic mb-0.5">{t(g.preDescription, currentLang)}</p>
+                          {/if}
+                          <h3 class="text-lg font-black leading-tight" style="color: {principle.color}">{t(g.name, currentLang)}</h3>
+                        </div>
                       </div>
                       <LevelBadge row={g.row} {currentLang} />
                     </div>
-                    {#if g.preDescription}
-                      <p class="text-gray-600 text-sm italic">{t(g.preDescription, currentLang)}</p>
-                    {/if}
                   </a>
                 {/each}
               </div>
@@ -278,8 +386,11 @@
 
                   <div class="grid grid-cols-1 gap-6">
                     {#each relevantExamples as example}
-                      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                        <div class="px-6 py-4 bg-gray-50/50 border-b border-gray-100 flex flex-wrap gap-2 items-center justify-between">
+                      <div class="block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group relative">
+                        <!-- Clickable area for the whole card (except links inside) -->
+                        <a href="/detail/{example.id}" use:link class="absolute inset-0 z-0 shadow-inner group-hover:bg-blue-50/10 transition-colors" aria-label={$ui.viewAction}></a>
+                        
+                        <div class="px-6 py-4 bg-gray-50/50 border-b border-gray-100 flex flex-wrap gap-2 items-center justify-between relative z-10 pointer-events-none">
                           <div class="flex items-center gap-3">
                             <span class="font-mono text-sm font-black" style="color: {example.color}">
                               {example.code}
@@ -294,20 +405,20 @@
                             </div>
                           </div>
                         </div>
-                        <div class="p-6">
-                          <div class="text-gray-700 leading-relaxed font-medium mb-6">
+                        <div class="p-6 relative z-10">
+                          <div class="text-gray-700 leading-relaxed font-medium mb-6 pointer-events-none">
                             <div class="mb-2">
-                                <span class="font-bold text-gray-700 dark:text-gray-300">Actividad:</span>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">{$ui.activity}:</span>
                                 {t(example.activity, currentLang)}
                             </div>
                             <div>
-                                <span class="font-bold text-gray-700 dark:text-gray-300">Opciones de Diseño:</span>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">{$ui.designOptions}:</span>
                                 {t(example.designOptions, currentLang)}
                             </div>
                           </div>
                           
                           {#if example.webTools && example.webTools.length > 0}
-                            <div class="flex flex-col gap-3">
+                            <div class="flex flex-col gap-3 relative z-20">
                               <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400">{$ui.webTools}</h4>
                               <div class="flex flex-wrap gap-3">
                                 {#each example.webTools as tool}
@@ -329,6 +440,7 @@
                 </div>
               {/if}
             {/await}
+          {/if}
           {/if}
         </div>
       </div>

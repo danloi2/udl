@@ -112,6 +112,24 @@
       "eu": "Arlo guztiak",
       "la": "Omnes areae"
     },
+    "example": {
+      "es": "Ejemplo",
+      "en": "Example",
+      "eu": "Adibidea",
+      "la": "Exemplum"
+    },
+    "activity": {
+      "es": "Actividad",
+      "en": "Activity",
+      "eu": "Jarduera",
+      "la": "Actio"
+    },
+    "designOptions": {
+      "es": "Opciones de diseño",
+      "en": "Design options",
+      "eu": "Diseinu aukerak",
+      "la": "Optiones designationis"
+    },
     "allTypes": {
       "es": "Todos los tipos",
       "en": "All types",

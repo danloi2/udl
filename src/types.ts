@@ -67,6 +67,7 @@ export interface UDLIndex {
   principles: Map<string, Principle>;
   guidelines: Map<string, Guideline>;
   considerations: Map<string, Consideration>;
+  examples: Map<string, Example>;
 }
 
 // Search result types

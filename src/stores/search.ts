@@ -27,6 +27,7 @@ export const selectedType = writable<'all' | 'guideline' | 'consideration' | 'ex
 export const searchableItems = derived([udlData, language], ([$udlData, $language]) => {
   const items: any[] = [];
   const considerationToPrinciple = new Map<string, string>();
+  const considerationToGuideline = new Map<string, string>();
 
   $udlData.networks.forEach((network) => {
     const principle = network.principle;
@@ -64,8 +65,9 @@ export const searchableItems = derived([udlData, language], ([$udlData, $languag
           guidelineName: guideline.name,
         });
 
-        // Map consideration to principle
+        // Map consideration to principle and guideline
         considerationToPrinciple.set(consideration.id, principle.id);
+        considerationToGuideline.set(consideration.id, guideline.id);
       });
     });
   });
@@ -76,9 +78,10 @@ export const searchableItems = derived([udlData, language], ([$udlData, $languag
       cGroup.examples.forEach((example: any) => {
         items.push({
           id: example.id,
-          code: '',
+          code: example.code,
           type: 'example',
           considerationId: cGroup.considerationId,
+          guidelineId: considerationToGuideline.get(cGroup.considerationId),
           principleId: considerationToPrinciple.get(cGroup.considerationId),
           item: example,
           educationalLevel: example.educationalLevel,
@@ -95,11 +98,15 @@ export const searchableItems = derived([udlData, language], ([$udlData, $languag
 export const fuse = derived([searchableItems, language], ([$searchableItems, $language]) => {
   return new Fuse($searchableItems, {
     keys: [
-      { name: 'code', weight: 4 },
+      { name: 'code', weight: 5 },
+      { name: 'id', weight: 5 },
       { name: `item.name.${$language}`, weight: 2 },
       { name: `item.description.${$language}`, weight: 1.5 },
-      { name: `item.activity.${$language}`, weight: 1.5 },
-      { name: `item.designOptions.${$language}`, weight: 1.0 },
+      { name: `item.activity.${$language}`, weight: 2 },
+      { name: `item.designOptions.${$language}`, weight: 1.5 },
+      { name: `item.educationalLevel.${$language}`, weight: 1 },
+      { name: `item.curricularArea.${$language}`, weight: 1 },
+      { name: 'item.webTools.name', weight: 1 },
       { name: `principleName.${$language}`, weight: 0.8 },
       { name: `guidelineName.${$language}`, weight: 0.8 },
     ],

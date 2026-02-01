@@ -94,7 +94,7 @@
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Engagement -->
-            <div class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-green-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <a href="/detail/{$udlData.networks[0].principle.id}" use:link class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-green-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div class="relative mb-6 w-24 h-24 flex items-center justify-center rounded-2xl bg-green-50 group-hover:bg-green-100 transition-colors">
                 <img src={affectiveLogo} alt="Affective Network" class="w-16 h-16 object-contain" />
                 <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-green-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">1</div>
@@ -110,10 +110,10 @@
               <p class="text-sm text-gray-600 text-center font-medium leading-relaxed">
                 {$ui.engagementWhy}
               </p>
-            </div>
+            </a>
             
             <!-- Representation -->
-            <div class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-purple-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <a href="/detail/{$udlData.networks[1].principle.id}" use:link class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-purple-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div class="relative mb-6 w-24 h-24 flex items-center justify-center rounded-2xl bg-purple-50 group-hover:bg-purple-100 transition-colors">
                 <img src={recognitionLogo} alt="Recognition Network" class="w-16 h-16 object-contain" />
                 <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-purple-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">2</div>
@@ -129,10 +129,10 @@
               <p class="text-sm text-gray-600 text-center font-medium leading-relaxed">
                 {$ui.representationWhat}
               </p>
-            </div>
+            </a>
             
             <!-- Action & Expression -->
-            <div class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-blue-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <a href="/detail/{$udlData.networks[2].principle.id}" use:link class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-blue-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div class="relative mb-6 w-24 h-24 flex items-center justify-center rounded-2xl bg-blue-50 group-hover:bg-blue-100 transition-colors">
                 <img src={strategicLogo} alt="Strategic Network" class="w-16 h-16 object-contain" />
                 <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">3</div>
@@ -148,7 +148,7 @@
               <p class="text-sm text-gray-600 text-center font-medium leading-relaxed">
                 {$ui.actionExpressionHow}
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>

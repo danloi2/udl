@@ -7,12 +7,25 @@ import type {
   Principle,
   Guideline,
   Consideration,
+  Example,
 } from '../types';
 import udlJson from '../data/udl-core.json';
 
 // Load and parse UDL data
 const rawData = udlJson as UDLRoot;
 export const udlData = writable<UDLData>(rawData.udl);
+
+import g1 from '../data/udl-guideline-1.json';
+import g2 from '../data/udl-guideline-2.json';
+import g3 from '../data/udl-guideline-3.json';
+import g4 from '../data/udl-guideline-4.json';
+import g5 from '../data/udl-guideline-5.json';
+import g6 from '../data/udl-guideline-6.json';
+import g7 from '../data/udl-guideline-7.json';
+import g8 from '../data/udl-guideline-8.json';
+import g9 from '../data/udl-guideline-9.json';
+
+const allExamplesFiles = [g1, g2, g3, g4, g5, g6, g7, g8, g9];
 
 // Create indexed data for fast lookups
 export const udlIndex = derived(udlData, ($udlData) => {
@@ -21,6 +34,7 @@ export const udlIndex = derived(udlData, ($udlData) => {
     principles: new Map(),
     guidelines: new Map(),
     considerations: new Map(),
+    examples: new Map(),
   };
 
   $udlData.networks.forEach((network: Network) => {
@@ -34,6 +48,15 @@ export const udlIndex = derived(udlData, ($udlData) => {
 
       guideline.considerations.forEach((consideration: Consideration) => {
         index.considerations.set(consideration.id, consideration);
+      });
+    });
+  });
+
+  // Index examples
+  allExamplesFiles.forEach((gFile: any) => {
+    gFile.considerations.forEach((cGroup: any) => {
+      cGroup.examples.forEach((example: any) => {
+        index.examples.set(example.id, example as Example);
       });
     });
   });
@@ -87,6 +110,24 @@ export function getGuidelineForConsideration(
         return guideline;
       }
     }
+  }
+  return undefined;
+}
+
+export function getExampleById(id: string, index: UDLIndex): Example | undefined {
+  return index.examples.get(id);
+}
+
+// Get consideration for an example
+export function getConsiderationForExample(
+  exampleId: string,
+  index: UDLIndex
+): Consideration | undefined {
+  // Extract considerationId from exampleId (e.g., "1-1-1" -> "1-1")
+  const parts = exampleId.split('-');
+  if (parts.length >= 2) {
+    const considerationId = `${parts[0]}-${parts[1]}`;
+    return index.considerations.get(considerationId);
   }
   return undefined;
 }

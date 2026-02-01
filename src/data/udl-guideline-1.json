@@ -20,10 +20,10 @@
             "la": "Lingua"
           },
           "activity": {
-            "es": "Lectura de un cuento interactivo en pantalla.",
-            "en": "Reading an interactive story on screen.",
-            "eu": "Ipuin interaktibo bat pantailan irakurtzea.",
-            "la": "Lectio fabulae interactivae in schermo."
+            "es": "Lectura de un cuento interactivo en pantalla",
+            "en": "Reading an interactive story on screen",
+            "eu": "Ipuin interaktibo bat pantailan irakurtzea",
+            "la": "Lectio fabulae interactivae in schermo"
           },
           "designOptions": {
             "es": "Aumentar tamaño de letra, fuente Sans Serif, velocidad lenta, imágenes ampliables.",
@@ -35,7 +35,7 @@
             {
               "name": "Book Creator",
               "url": "https://bookcreator.com",
-              "logo": "https://logo.clearbit.com/bookcreator.com"
+              "logo": "https://bookcreator.com/wp-content/uploads/2023/03/icon-512-brighter.png"
             },
             {
               "name": "Microsoft Immersive Reader",
@@ -66,10 +66,10 @@
             "la": "Mathematica"
           },
           "activity": {
-            "es": "Juego digital para reconocer figuras geométricas.",
-            "en": "Digital game to recognize geometric shapes.",
-            "eu": "Irudi geometrikoak ezagutzeko joko digitala.",
-            "la": "Ludus digitalis ad figuras geometricas agnoscendas."
+            "es": "Juego digital para reconocer figuras geométricas",
+            "en": "Digital game to recognize geometric shapes",
+            "eu": "Irudi geometrikoak ezagutzeko joko digitala",
+            "la": "Ludus digitalis ad figuras geometricas agnoscendas"
           },
           "designOptions": {
             "es": "Alto contraste (figuras oscuras sobre fondo claro), sonido ajustable, zoom en pantalla.",
@@ -107,10 +107,10 @@
             "la": "Lingua"
           },
           "activity": {
-            "es": "Lectura de un texto con preguntas.",
-            "en": "Reading a text with questions.",
-            "eu": "Testu baten irakurketa galderekin.",
-            "la": "Lectio textus cum quaestionibus."
+            "es": "Lectura de un texto con preguntas",
+            "en": "Reading a text with questions",
+            "eu": "Testu baten irakurketa galderekin",
+            "la": "Lectio textus cum quaestionibus"
           },
           "designOptions": {
             "es": "Espaciado ampliado entre líneas, resaltado de palabras clave en colores, texto a voz.",
@@ -148,10 +148,10 @@
             "la": "Mathematica"
           },
           "activity": {
-            "es": "Resolución de problemas con apoyo gráfico.",
-            "en": "Problem solving with graphic support.",
-            "eu": "Arazoen ebazpena laguntza grafikoarekin.",
-            "la": "Solutio problematum cum subsidio graphico."
+            "es": "Resolución de problemas con apoyo gráfico",
+            "en": "Problem solving with graphic support",
+            "eu": "Arazoen ebazpena laguntza grafikoarekin",
+            "la": "Solutio problematum cum subsidio graphico"
           },
           "designOptions": {
             "es": "Gráficos ampliables, reorganizar elementos visuales, cursor de mayor tamaño y color llamativo.",
@@ -189,10 +189,10 @@
             "la": "Scientiae Sociales"
           },
           "activity": {
-            "es": "Aprender geografía con mapas interactivos.",
-            "en": "Learning geography with interactive maps.",
-            "eu": "Geografia ikastea mapa interaktiboekin.",
-            "la": "Geographiam discere cum tabulis interactivis."
+            "es": "Aprender geografía con mapas interactivos",
+            "en": "Learning geography with interactive maps",
+            "eu": "Geografia ikastea mapa interaktiboekin",
+            "la": "Geographiam discere cum tabulis interactivis"
           },
           "designOptions": {
             "es": "Zoom en zonas específicas, cambio de contraste, eliminación de capas de información secundaria.",
@@ -225,10 +225,10 @@
             "la": "Scientiae"
           },
           "activity": {
-            "es": "Experimento en simulador digital.",
-            "en": "Digital simulator experiment.",
-            "eu": "Esperimentua simuladore digitalean.",
-            "la": "Experimentum in simulatore digitali."
+            "es": "Experimento en simulador digital",
+            "en": "Digital simulator experiment",
+            "eu": "Esperimentua simuladore digitalean",
+            "la": "Experimentum in simulatore digitali"
           },
           "designOptions": {
             "es": "Ajuste de velocidad de animaciones, ampliación de instrumentos, audio con volumen regulable.",
@@ -266,10 +266,10 @@
             "la": "Litteratura"
           },
           "activity": {
-            "es": "Lectura de una obra con anotaciones.",
-            "en": "Reading a work with annotations.",
-            "eu": "Obra baten irakurketa oharrekin.",
-            "la": "Lectio operis cum adnotationibus."
+            "es": "Lectura de una obra con anotaciones",
+            "en": "Reading a work with annotations",
+            "eu": "Obra baten irakurketa oharrekin",
+            "la": "Lectio operis cum adnotationibus"
           },
           "designOptions": {
             "es": "Cambio de tipografía y tamaño, fondo sepia o modo oscuro, máscara de lectura.",
@@ -302,10 +302,10 @@
             "la": "Oeconomia"
           },
           "activity": {
-            "es": "Interpretación de gráficos estadísticos.",
-            "en": "Interpretation of statistical charts.",
-            "eu": "Grafiko estatistikoen interpretazioa.",
-            "la": "Interpretatio chartarum statisticarum."
+            "es": "Interpretación de gráficos estadísticos",
+            "en": "Interpretation of statistical charts",
+            "eu": "Grafiko estatistikoen interpretazioa",
+            "la": "Interpretatio chartarum statisticarum"
           },
           "designOptions": {
             "es": "Escalado de gráficos sin pérdida de calidad, colores personalizables, diseño limpio.",
@@ -343,10 +343,10 @@
             "la": "Investigatio"
           },
           "activity": {
-            "es": "Estudio de papers científicos en PDF.",
-            "en": "Study of scientific papers in PDF.",
-            "eu": "Paper zientifikoen azterketa PDFan.",
-            "la": "Studium chartarum scientificarum in PDF."
+            "es": "Estudio de papers científicos en PDF",
+            "en": "Study of scientific papers in PDF",
+            "eu": "Paper zientifikoen azterketa PDFan",
+            "la": "Studium chartarum scientificarum in PDF"
           },
           "designOptions": {
             "es": "Reflujo de texto, lectura en voz alta sincronizada, ajuste de contraste y brillo.",
@@ -384,10 +384,10 @@
             "la": "Online"
           },
           "activity": {
-            "es": "Seguimiento de clases virtuales.",
-            "en": "Following virtual classes.",
-            "eu": "Klase birtualen jarraipena.",
-            "la": "Sequentia classium virtualium."
+            "es": "Seguimiento de clases virtuales",
+            "en": "Following virtual classes",
+            "eu": "Klase birtualen jarraipena",
+            "la": "Sequentia classium virtualium"
           },
           "designOptions": {
             "es": "Subtítulos personalizables, velocidad de reproducción variable, diseño de diapositivas con alto contraste.",
@@ -430,10 +430,10 @@
             "la": "Musica"
           },
           "activity": {
-            "es": "Aprender una canción sobre los animales.",
-            "en": "Learning a song about animals.",
-            "eu": "Animaliei buruzko abesti bat ikastea.",
-            "la": "Carmen de animalibus discere."
+            "es": "Aprender una canción sobre los animales",
+            "en": "Learning a song about animals",
+            "eu": "Animaliei buruzko abesti bat ikastea",
+            "la": "Carmen de animalibus discere"
           },
           "designOptions": {
             "es": "Pictogramas de cada animal, subtítulos con palabras clave, vibración o luces.",
@@ -476,10 +476,10 @@
             "la": "Consuetudines"
           },
           "activity": {
-            "es": "Explicar las rutinas diarias del aula.",
-            "en": "Explaining daily classroom routines.",
-            "eu": "Ikasgelako eguneroko errutinak azaltzea.",
-            "la": "Consuetudines diurnas scholae explicare."
+            "es": "Explicar las rutinas diarias del aula",
+            "en": "Explaining daily classroom routines",
+            "eu": "Ikasgelako eguneroko errutinak azaltzea",
+            "la": "Consuetudines diurnas scholae explicare"
           },
           "designOptions": {
             "es": "Panel visual con imágenes, grabación de voz describiendo cada paso, objetos reales.",
@@ -517,10 +517,10 @@
             "la": "Scientiae"
           },
           "activity": {
-            "es": "Ver un vídeo sobre el ciclo del agua.",
-            "en": "Watching a video about the water cycle.",
-            "eu": "Uraren zikloari buruzko bideo bat ikustea.",
-            "la": "Video de cyclo aquae spectare."
+            "es": "Ver un vídeo sobre el ciclo del agua",
+            "en": "Watching a video about the water cycle",
+            "eu": "Uraren zikloari buruzko bideo bat ikustea",
+            "la": "Video de cyclo aquae spectare"
           },
           "designOptions": {
             "es": "Subtítulos activados, transcripción descargable, esquema visual del proceso.",
@@ -558,10 +558,10 @@
             "la": "Scientiae Sociales"
           },
           "activity": {
-            "es": "Estudiar distintos paisajes.",
-            "en": "Studying different landscapes.",
-            "eu": "Paisai ezberdinak ikastea.",
-            "la": "Diversas terras studere."
+            "es": "Estudiar distintos paisajes",
+            "en": "Studying different landscapes",
+            "eu": "Paisai ezberdinak ikastea",
+            "la": "Diversas terras studere"
           },
           "designOptions": {
             "es": "Descripciones en audio de las imágenes, maqueta táctil del relieve, texto simplificado.",
@@ -599,10 +599,10 @@
             "la": "Scientiae"
           },
           "activity": {
-            "es": "Reacción química en laboratorio.",
-            "en": "Chemical reaction in lab.",
-            "eu": "Erreakzio kimikoa laborategian.",
-            "la": "Reactio chemica in laboratorio."
+            "es": "Reacción química en laboratorio",
+            "en": "Chemical reaction in lab",
+            "eu": "Erreakzio kimikoa laborategian",
+            "la": "Reactio chemica in laboratorio"
           },
           "designOptions": {
             "es": "Instrucciones escritas y explicación oral, vídeo con subtítulos, diagrama visual del proceso.",
@@ -640,10 +640,10 @@
             "la": "Historia"
           },
           "activity": {
-            "es": "Escuchar un pódcast histórico.",
-            "en": "Listening to a history podcast.",
-            "eu": "Historiaren podcast bat entzutea.",
-            "la": "Podcast historicum audire."
+            "es": "Escuchar un pódcast histórico",
+            "en": "Listening to a history podcast",
+            "eu": "Historiaren podcast bat entzutea",
+            "la": "Podcast historicum audire"
           },
           "designOptions": {
             "es": "Transcripción completa, línea de tiempo visual, palabras clave destacadas.",
@@ -686,10 +686,10 @@
             "la": "Ars"
           },
           "activity": {
-            "es": "Analizar una pintura famosa.",
-            "en": "Analyzing a famous painting.",
-            "eu": "Pintura ospetsu bat aztertzea.",
-            "la": "Picturam claram resolvere."
+            "es": "Analizar una pintura famosa",
+            "en": "Analyzing a famous painting",
+            "eu": "Pintura ospetsu bat aztertzea",
+            "la": "Picturam claram resolvere"
           },
           "designOptions": {
             "es": "Audiodescripción detallada, texto explicativo, relieve táctil de la composición.",
@@ -727,10 +727,10 @@
             "la": "Oeconomia"
           },
           "activity": {
-            "es": "Analizar datos estadísticos.",
-            "en": "Analyzing statistical data.",
-            "eu": "Datu estatistikoak aztertzea.",
-            "la": "Data statistica resolvere."
+            "es": "Analizar datos estadísticos",
+            "en": "Analyzing statistical data",
+            "eu": "Datu estatistikoak aztertzea",
+            "la": "Data statistica resolvere"
           },
           "designOptions": {
             "es": "Gráfico visual, explicación oral grabada, tabla de datos en texto.",
@@ -773,10 +773,10 @@
             "la": "Online"
           },
           "activity": {
-            "es": "Seguir una conferencia online.",
-            "en": "Following an online conference.",
-            "eu": "Online hitzaldi bat jarraitzea.",
-            "la": "Conferentiam online sequi."
+            "es": "Seguir una conferencia online",
+            "en": "Following an online conference",
+            "eu": "Online hitzaldi bat jarraitzea",
+            "la": "Conferentiam online sequi"
           },
           "designOptions": {
             "es": "Subtítulos automáticos editados, apuntes en PDF accesible, audio descargable.",
@@ -814,10 +814,10 @@
             "la": "Investigatio"
           },
           "activity": {
-            "es": "Exposición de trabajos del alumnado.",
-            "en": "Student work presentation.",
-            "eu": "Ikasleen lanen aurkezpena.",
-            "la": "Expositio operum discipro."
+            "es": "Exposición de trabajos del alumnado",
+            "en": "Student work presentation",
+            "eu": "Ikasleen lanen aurkezpena",
+            "la": "Expositio operum discipro"
           },
           "designOptions": {
             "es": "Diapositivas visuales claras, narración oral, resumen escrito previo, infografía final.",
@@ -865,10 +865,10 @@
             "la": "Cognitio Rerum"
           },
           "activity": {
-            "es": "Explorar animales de la granja mediante imágenes y sonidos.",
-            "en": "Exploring farm animals through images and sounds.",
-            "eu": "Baserriko animaliak irudi eta soinuen bidez esploratzea.",
-            "la": "Animalia rustica per imagines et sonos explorare."
+            "es": "Explorar animales de la granja mediante imágenes y sonidos",
+            "en": "Exploring farm animals through images and sounds",
+            "eu": "Baserriko animaliak irudi eta soinuen bidez esploratzea",
+            "la": "Animalia rustica per imagines et sonos explorare"
           },
           "designOptions": {
             "es": "Audiodescripciones, figuras táctiles, sonidos reales y cuentos con diversidad cultural.",
@@ -906,10 +906,10 @@
             "la": "Scientiae Naturales"
           },
           "activity": {
-            "es": "Aprender las partes de una planta con apoyo visual y táctil.",
-            "en": "Learning the parts of a plant with visual and tactile support.",
-            "eu": "Landare baten atalak ikastea ikusmen eta ukimen laguntzarekin.",
-            "la": "Partes plantae discere cum auxilio visivo et tactili."
+            "es": "Aprender las partes de una planta con apoyo visual y táctil",
+            "en": "Learning the parts of a plant with visual and tactile support",
+            "eu": "Landare baten atalak ikastea ikusmen eta ukimen laguntzarekin",
+            "la": "Partes plantae discere cum auxilio visivo et tactili"
           },
           "designOptions": {
             "es": "Descripción oral de esquemas, maqueta táctil y ejemplos de plantas de distintas culturas.",
@@ -947,10 +947,10 @@
             "la": "Scientiae Sociales"
           },
           "activity": {
-            "es": "Descubrir inventos y descubrimientos de diferentes culturas.",
-            "en": "Discovering inventions and discoveries from different cultures.",
-            "eu": "Kultura ezberdinetako asmakizun eta aurkikuntzak ezagutzea.",
-            "la": "Inventiones et inventa ex culturis variis cognoscere."
+            "es": "Descubrir inventos y descubrimientos de diferentes culturas",
+            "en": "Discovering inventions and discoveries from different cultures",
+            "eu": "Kultura ezberdinetako asmakizun eta aurkikuntzak ezagutzea",
+            "la": "Inventiones et inventa ex culturis variis cognoscere"
           },
           "designOptions": {
             "es": "Biografías en audio y texto, línea de tiempo narrada y visual, referentes diversos.",
@@ -988,10 +988,10 @@
             "la": "Physica et Chemia"
           },
           "activity": {
-            "es": "Comprender el sistema solar mediante simulaciones y modelos físicos.",
-            "en": "Understanding the solar system through simulations and physical models.",
-            "eu": "Eguzki-sistema simulazio eta maketa fisikoen bidez ulertzea.",
-            "la": "Systema solare per simulationes et exempla physica intellegere."
+            "es": "Comprender el sistema solar mediante simulaciones y modelos físicos",
+            "en": "Understanding the solar system through simulations and physical models",
+            "eu": "Eguzki-sistema simulazio eta maketa fisikoen bidez ulertzea",
+            "la": "Systema solare per simulationes et exempla physica intellegere"
           },
           "designOptions": {
             "es": "Narraciones orales de animaciones, maquetas táctiles y aportaciones de astrónomos de distintas culturas.",
@@ -1029,10 +1029,10 @@
             "la": "Lingua et Litterae"
           },
           "activity": {
-            "es": "Analizar noticias desde distintas perspectivas culturales.",
-            "en": "Analyzing news from different cultural perspectives.",
-            "eu": "Albisteak kultura ikuspegi ezberdinetatik aztertzea.",
-            "la": "Nuntios ex perspectivis culturalibus variis analysare."
+            "es": "Analizar noticias desde distintas perspectivas culturales",
+            "en": "Analyzing news from different cultural perspectives",
+            "eu": "Albisteak kultura ikuspegi ezberdinetatik aztertzea",
+            "la": "Nuntios ex perspectivis culturalibus variis analysare"
           },
           "designOptions": {
             "es": "Texto + audio, conversión a voz, análisis de estereotipos y comparación de medios diversos.",
@@ -1070,10 +1070,10 @@
             "la": "Historia"
           },
           "activity": {
-            "es": "Estudiar movimientos por los derechos humanos.",
-            "en": "Studying human rights movements.",
-            "eu": "Giza eskubideen aldeko mugimenduak aztertzea.",
-            "la": "Motus pro iuribus humanis studere."
+            "es": "Estudiar movimientos por los derechos humanos",
+            "en": "Studying human rights movements",
+            "eu": "Giza eskubideen aldeko mugimenduak aztertzea",
+            "la": "Motus pro iuribus humanis studere"
           },
           "designOptions": {
             "es": "Testimonios en audio, documentos accesibles y presencia de referentes diversos.",
@@ -1111,10 +1111,10 @@
             "la": "Lingua et Litterae"
           },
           "activity": {
-            "es": "Analizar una novela desde la representación de identidades.",
-            "en": "Analyzing a novel through identity representation.",
-            "eu": "Nobela bat identitateen errepresentaziotik aztertzea.",
-            "la": "Novellam per repraesentationem identitatum analysare."
+            "es": "Analizar una novela desde la representación de identidades",
+            "en": "Analyzing a novel through identity representation",
+            "eu": "Nobela bat identitateen errepresentaziotik aztertzea",
+            "la": "Novellam per repraesentationem identitatum analysare"
           },
           "designOptions": {
             "es": "Audiolibro + texto, contexto cultural del autor/a y debate sobre diversidad.",
@@ -1152,10 +1152,10 @@
             "la": "Scientiae Salutis"
           },
           "activity": {
-            "es": "Analizar un caso clínico con variables culturales y sociales.",
-            "en": "Analyzing a clinical case with cultural and social variables.",
-            "eu": "Kasu kliniko bat aldagai kultural eta sozialekin aztertzea.",
-            "la": "Casum clinicum cum variabilibus culturalibus et socialibus analysare."
+            "es": "Analizar un caso clínico con variables culturales y sociales",
+            "en": "Analyzing a clinical case with cultural and social variables",
+            "eu": "Kasu kliniko bat aldagai kultural eta sozialekin aztertzea",
+            "la": "Casum clinicum cum variabilibus culturalibus et socialibus analysare"
           },
           "designOptions": {
             "es": "Versión en audio, gráficos descritos verbalmente y diversidad de contextos reales.",
@@ -1193,10 +1193,10 @@
             "la": "Historia Scientiae"
           },
           "activity": {
-            "es": "Revisar aportaciones científicas de distintas regiones del mundo.",
-            "en": "Reviewing scientific contributions from different regions of the world.",
-            "eu": "Munduko eskualde ezberdinetako ekarpen zientifikoak berrikustea.",
-            "la": "Contributiones scientificas ex regionibus variis mundi recensere."
+            "es": "Revisar aportaciones científicas de distintas regiones del mundo",
+            "en": "Reviewing scientific contributions from different regions of the world",
+            "eu": "Munduko eskualde ezberdinetako ekarpen zientifikoak berrikustea",
+            "la": "Contributiones scientificas ex regionibus variis mundi recensere"
           },
           "designOptions": {
             "es": "Podcasts + textos, mapas conceptuales accesibles y visibilización de ciencia no occidental.",
@@ -1234,10 +1234,10 @@
             "la": "Scientiae Sociales"
           },
           "activity": {
-            "es": "Proyecto autobiográfico vinculado a procesos históricos.",
-            "en": "Autobiographical project linked to historical processes.",
-            "eu": "Proiektu autobiografikoa prozesu historikoekin lotuta.",
-            "la": "Proiectum autobiographicum cum processibus historicis conexum."
+            "es": "Proyecto autobiográfico vinculado a procesos históricos",
+            "en": "Autobiographical project linked to historical processes",
+            "eu": "Proiektu autobiografikoa prozesu historikoekin lotuta",
+            "la": "Proiectum autobiographicum cum processibus historicis conexum"
           },
           "designOptions": {
             "es": "Entrevistas en audio, línea de tiempo visual y narrada, integración de identidades culturales propias.",
