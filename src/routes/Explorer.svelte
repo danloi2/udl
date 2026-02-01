@@ -9,9 +9,13 @@
     selectedPrinciple, 
     selectedGuideline,
     selectedConsideration,
+    selectedEducationalLevel,
+    selectedCurricularArea,
     selectedType, 
     availableGuidelines,
     availableConsiderations,
+    availableEducationalLevels,
+    availableCurricularAreas,
     resetFilters 
   } from '../stores/search';
   import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
@@ -134,9 +138,34 @@
           <option value="all">{$ui.allTypes}</option>
           <option value="guideline">{$ui.guidelines}</option>
           <option value="consideration">{$ui.considerations}</option>
+          <option value="example">{$ui.examples}</option>
         </select>
 
-        {#if $searchQuery || $selectedPrinciple !== 'all' || $selectedGuideline !== 'all' || $selectedConsideration !== 'all' || $selectedType !== 'all'}
+        {#if $selectedType === 'example' || $selectedType === 'all'}
+          <!-- Educational Level Filter -->
+          <select
+            bind:value={$selectedEducationalLevel}
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="all">{$ui.allEducationalLevels}</option>
+            {#each $availableEducationalLevels as level}
+              <option value={level.es}>{t(level, currentLang)}</option>
+            {/each}
+          </select>
+
+          <!-- Curricular Area Filter -->
+          <select
+            bind:value={$selectedCurricularArea}
+            class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="all">{$ui.allCurricularAreas}</option>
+            {#each $availableCurricularAreas as area}
+              <option value={area.es}>{t(area, currentLang)}</option>
+            {/each}
+          </select>
+        {/if}
+
+        {#if $searchQuery || $selectedPrinciple !== 'all' || $selectedGuideline !== 'all' || $selectedConsideration !== 'all' || $selectedType !== 'all' || $selectedEducationalLevel !== 'all' || $selectedCurricularArea !== 'all'}
           <button
             on:click={resetFilters}
             class="text-sm text-blue-600 hover:text-blue-800 font-medium"
@@ -164,7 +193,7 @@
           : null}
         {@const styles = guideline ? getGuidelineStyles(guideline) : null}
         <a
-          href="/detail/{result.id}"
+          href={result.type === 'example' ? `/detail/${result.considerationId}` : `/detail/${result.id}`}
           use:link
           class="block bg-white p-6 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1 group"
           style="border-top: 4px solid {principle?.color || '#eee'}; {styles?.bgLight || ''}"
@@ -174,6 +203,20 @@
               <span class="font-mono text-lg font-bold" style="{styles?.text || 'color: #374151'}">
                 {result.code}
               </span>
+            {:else if result.type === 'example'}
+              <div class="flex flex-col gap-1">
+                <span class="font-mono text-xs font-black" style="color: {result.item.color}">
+                  {result.item.code}
+                </span>
+                <div class="flex gap-1">
+                   <span class="text-[8px] px-1.5 py-0.5 font-black uppercase tracking-wider rounded bg-blue-50 text-blue-600 border border-blue-100">
+                    {t(result.educationalLevel, currentLang)}
+                  </span>
+                  <span class="text-[8px] px-1.5 py-0.5 font-black uppercase tracking-wider rounded bg-purple-50 text-purple-600 border border-purple-100">
+                    {t(result.curricularArea, currentLang)}
+                  </span>
+                </div>
+              </div>
             {/if}
             <span class="text-[10px] px-2 py-0.5 font-black uppercase tracking-wider rounded border" 
                   style="background-color: white; border-color: {principle?.color || '#eee'}; color: {principle?.color || '#666'}">
@@ -181,17 +224,21 @@
                 {$ui.principle || 'Principio'}
               {:else if result.type === 'guideline'}
                 {$ui.guideline || 'Pauta'}
-              {:else}
+              {:else if result.type === 'consideration'}
                 {$ui.consideration || 'Consideración'}
+              {:else}
+                {$ui.examples || 'Ejemplo'}
               {/if}
             </span>
           </div>
           <p class="font-bold mb-3" style="color: {principle?.color || '#111827'}">
-            {getDisplayText(result)}
+            {result.type === 'example' ? t(result.item.activity, currentLang) : getDisplayText(result)}
           </p>
           <div class="flex items-center justify-between mt-3">
             {#if principle?.color}
               <Tag color={principle.color} label={t(principle.name, currentLang)} small={true} />
+            {:else if result.type === 'example'}
+               <span class="text-[10px] font-bold text-gray-400">ID: {result.considerationId}</span>
             {/if}
             {#if guideline}
               <LevelBadge row={guideline.row} {currentLang} />

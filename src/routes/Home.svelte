@@ -32,9 +32,12 @@
   <div class="container mx-auto px-4 py-8 md:py-16">
     <div class="text-center mb-12 flex flex-col items-center">
       <img src={udlLogo} alt="UDL Logo" class="w-48 h-48 md:w-64 md:h-64 mb-6 hover:scale-105 transition-transform duration-500" />
-      <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tight bg-clip-text text-transparent bg-linear-to-r from-blue-700 via-purple-700 to-pink-700">
-        {t($udlData.title, currentLang)}
+      <h1 class="text-5xl md:text-6xl font-black mb-2 tracking-tight bg-clip-text text-transparent bg-linear-to-r from-blue-700 via-purple-700 to-pink-700">
+        {t($udlData.title, currentLang)} ({t($udlData.acronym, currentLang)})
       </h1>
+      <p class="text-2xl md:text-3xl font-bold text-gray-500 mb-6 uppercase tracking-wider">
+        {t($udlData.version, currentLang)}
+      </p>
       <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-medium leading-relaxed">
         {t($udlData.goal, currentLang)}
       </p>

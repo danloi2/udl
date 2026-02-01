@@ -1,0 +1,1264 @@
+{
+  "considerations": [
+    {
+      "considerationId": "1-1",
+      "examples": [
+        {
+          "id": "1-1-1",
+          "code": "1.1.1",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Infantil",
+            "en": "Pre-school",
+            "eu": "Haur Hezkuntza",
+            "la": "Infantilis"
+          },
+          "curricularArea": {
+            "es": "Lengua",
+            "en": "Language",
+            "eu": "Hizkuntza",
+            "la": "Lingua"
+          },
+          "activity": {
+            "es": "Lectura de un cuento interactivo en pantalla.",
+            "en": "Reading an interactive story on screen.",
+            "eu": "Ipuin interaktibo bat pantailan irakurtzea.",
+            "la": "Lectio fabulae interactivae in schermo."
+          },
+          "designOptions": {
+            "es": "Aumentar tamaño de letra, fuente Sans Serif, velocidad lenta, imágenes ampliables.",
+            "en": "Increase font size, Sans Serif font, slow speed, zoomable images.",
+            "eu": "Letra-tamaina handitu, Sans Serif iturria, abiadura motela, irudi handigarriak.",
+            "la": "Magnitudinem litterarum augere, fons Sans Serif, velocitas tarda, imagines amplificabiles."
+          },
+          "webTools": [
+            {
+              "name": "Book Creator",
+              "url": "https://bookcreator.com",
+              "logo": "https://logo.clearbit.com/bookcreator.com"
+            },
+            {
+              "name": "Microsoft Immersive Reader",
+              "url": "https://www.onenote.com/learningtools",
+              "logo": "https://logo.clearbit.com/microsoft.com"
+            },
+            {
+              "name": "Narrador / VoiceOver",
+              "url": "#",
+              "logo": "https://logo.clearbit.com/apple.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-2",
+          "code": "1.1.2",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Infantil",
+            "en": "Pre-school",
+            "eu": "Haur Hezkuntza",
+            "la": "Infantilis"
+          },
+          "curricularArea": {
+            "es": "Matemáticas",
+            "en": "Mathematics",
+            "eu": "Matematika",
+            "la": "Mathematica"
+          },
+          "activity": {
+            "es": "Juego digital para reconocer figuras geométricas.",
+            "en": "Digital game to recognize geometric shapes.",
+            "eu": "Irudi geometrikoak ezagutzeko joko digitala.",
+            "la": "Ludus digitalis ad figuras geometricas agnoscendas."
+          },
+          "designOptions": {
+            "es": "Alto contraste (figuras oscuras sobre fondo claro), sonido ajustable, zoom en pantalla.",
+            "en": "High contrast (dark figures on light background), adjustable sound, screen zoom.",
+            "eu": "Kontraste handia, soinu erregulagarria, zoom pantailan.",
+            "la": "Contrastus altus, sonus accommodabilis, zoom in schermo."
+          },
+          "webTools": [
+            {
+              "name": "Genially",
+              "url": "https://genial.ly",
+              "logo": "https://logo.clearbit.com/genial.ly"
+            },
+            {
+              "name": "PowerPoint",
+              "url": "https://office.com",
+              "logo": "https://logo.clearbit.com/office.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-3",
+          "code": "1.1.3",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Lengua",
+            "en": "Language",
+            "eu": "Hizkuntza",
+            "la": "Lingua"
+          },
+          "activity": {
+            "es": "Lectura de un texto con preguntas.",
+            "en": "Reading a text with questions.",
+            "eu": "Testu baten irakurketa galderekin.",
+            "la": "Lectio textus cum quaestionibus."
+          },
+          "designOptions": {
+            "es": "Espaciado ampliado entre líneas, resaltado de palabras clave en colores, texto a voz.",
+            "en": "Expanded line spacing, keyword highlighting in colors, text-to-speech.",
+            "eu": "Tarte handitua, gako-hitzak nabarmentzea, testutik ahotsagora.",
+            "la": "Spatium amplificatum, verba clavia illustrata, textus ad vocem."
+          },
+          "webTools": [
+            {
+              "name": "Read&Write",
+              "url": "https://texthelp.com",
+              "logo": "https://logo.clearbit.com/texthelp.com"
+            },
+            {
+              "name": "Google Docs",
+              "url": "https://docs.google.com",
+              "logo": "https://logo.clearbit.com/google.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-4",
+          "code": "1.1.4",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Matemáticas",
+            "en": "Mathematics",
+            "eu": "Matematika",
+            "la": "Mathematica"
+          },
+          "activity": {
+            "es": "Resolución de problemas con apoyo gráfico.",
+            "en": "Problem solving with graphic support.",
+            "eu": "Arazoen ebazpena laguntza grafikoarekin.",
+            "la": "Solutio problematum cum subsidio graphico."
+          },
+          "designOptions": {
+            "es": "Gráficos ampliables, reorganizar elementos visuales, cursor de mayor tamaño y color llamativo.",
+            "en": "Zoomable graphics, rearrange visual elements, larger cursor with striking color.",
+            "eu": "Grafiko handigarriak, elementuak berrantolatu, kurtsore handiagoa.",
+            "la": "Graphica amplificabilia, elementa reorganizare, cursor maior."
+          },
+          "webTools": [
+            {
+              "name": "Canva",
+              "url": "https://canva.com",
+              "logo": "https://logo.clearbit.com/canva.com"
+            },
+            {
+              "name": "GeoGebra",
+              "url": "https://geogebra.org",
+              "logo": "https://logo.clearbit.com/geogebra.org"
+            }
+          ]
+        },
+        {
+          "id": "1-1-5",
+          "code": "1.1.5",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias Sociales",
+            "en": "Social Sciences",
+            "eu": "Gizarte Zientziak",
+            "la": "Scientiae Sociales"
+          },
+          "activity": {
+            "es": "Aprender geografía con mapas interactivos.",
+            "en": "Learning geography with interactive maps.",
+            "eu": "Geografia ikastea mapa interaktiboekin.",
+            "la": "Geographiam discere cum tabulis interactivis."
+          },
+          "designOptions": {
+            "es": "Zoom en zonas específicas, cambio de contraste, eliminación de capas de información secundaria.",
+            "en": "Zoom in specific zones, contrast change, removing secondary information layers.",
+            "eu": "Zoom, kontraste aldaketa, bigarren mailako geruzak ezabatzea.",
+            "la": "Zoom, mutatio contrastus, strata secundaria removere."
+          },
+          "webTools": [
+            {
+              "name": "Google Maps",
+              "url": "https://maps.google.com",
+              "logo": "https://logo.clearbit.com/google.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-6",
+          "code": "1.1.6",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Secundaria",
+            "en": "Secondary",
+            "eu": "Bigarren Hezkuntza",
+            "la": "Secundaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias",
+            "en": "Science",
+            "eu": "Zientziak",
+            "la": "Scientiae"
+          },
+          "activity": {
+            "es": "Experimento en simulador digital.",
+            "en": "Digital simulator experiment.",
+            "eu": "Esperimentua simuladore digitalean.",
+            "la": "Experimentum in simulatore digitali."
+          },
+          "designOptions": {
+            "es": "Ajuste de velocidad de animaciones, ampliación de instrumentos, audio con volumen regulable.",
+            "en": "Animation speed adjustment, instrument zoom, adjustable volume audio.",
+            "eu": "Abiadura doikuntza, tresnen handitzea, bolumen erregulagarria.",
+            "la": "Accommodatio velocitatis, amplificatio instrumentorum, volumen accommodabile."
+          },
+          "webTools": [
+            {
+              "name": "PhET",
+              "url": "https://phet.colorado.edu",
+              "logo": "https://logo.clearbit.com/colorado.edu"
+            },
+            {
+              "name": "Labster",
+              "url": "https://labster.com",
+              "logo": "https://logo.clearbit.com/labster.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-7",
+          "code": "1.1.7",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Secundaria",
+            "en": "Secondary",
+            "eu": "Bigarren Hezkuntza",
+            "la": "Secundaria"
+          },
+          "curricularArea": {
+            "es": "Literatura",
+            "en": "Literature",
+            "eu": "Literatura",
+            "la": "Litteratura"
+          },
+          "activity": {
+            "es": "Lectura de una obra con anotaciones.",
+            "en": "Reading a work with annotations.",
+            "eu": "Obra baten irakurketa oharrekin.",
+            "la": "Lectio operis cum adnotationibus."
+          },
+          "designOptions": {
+            "es": "Cambio de tipografía y tamaño, fondo sepia o modo oscuro, máscara de lectura.",
+            "en": "Change typography and size, sepia background or dark mode, reading mask.",
+            "eu": "Tipografia eta tamaina aldaketa, modu iluna, irakurketa maskara.",
+            "la": "Mutatio typographiae et magnitudinis, modus obscurus, persona lectionis."
+          },
+          "webTools": [
+            {
+              "name": "Kindle",
+              "url": "https://kindle.com",
+              "logo": "https://logo.clearbit.com/amazon.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-8",
+          "code": "1.1.8",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Bachillerato",
+            "en": "High School",
+            "eu": "Batxilergoa",
+            "la": "Baccalaureatus"
+          },
+          "curricularArea": {
+            "es": "Economía",
+            "en": "Economics",
+            "eu": "Ekonomia",
+            "la": "Oeconomia"
+          },
+          "activity": {
+            "es": "Interpretación de gráficos estadísticos.",
+            "en": "Interpretation of statistical charts.",
+            "eu": "Grafiko estatistikoen interpretazioa.",
+            "la": "Interpretatio chartarum statisticarum."
+          },
+          "designOptions": {
+            "es": "Escalado de gráficos sin pérdida de calidad, colores personalizables, diseño limpio.",
+            "en": "Lossless chart scaling, customizable colors, clean design.",
+            "eu": "Galera gabeko eskalatzea, kolore pertsonalizagarriak, diseinu garbia.",
+            "la": "Scalatio sine damno, colores accommodabiles, consilium purum."
+          },
+          "webTools": [
+            {
+              "name": "Tableau",
+              "url": "https://tableau.com",
+              "logo": "https://logo.clearbit.com/tableau.com"
+            },
+            {
+              "name": "Power BI",
+              "url": "https://powerbi.microsoft.com",
+              "logo": "https://logo.clearbit.com/microsoft.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-9",
+          "code": "1.1.9",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Investigación",
+            "en": "Research",
+            "eu": "Ikertzailea",
+            "la": "Investigatio"
+          },
+          "activity": {
+            "es": "Estudio de papers científicos en PDF.",
+            "en": "Study of scientific papers in PDF.",
+            "eu": "Paper zientifikoen azterketa PDFan.",
+            "la": "Studium chartarum scientificarum in PDF."
+          },
+          "designOptions": {
+            "es": "Reflujo de texto, lectura en voz alta sincronizada, ajuste de contraste y brillo.",
+            "en": "Text reflow, synchronized read aloud, contrast and brightness adjustment.",
+            "eu": "Testuaren birfluxua, ozen irakurtzea, kontraste doikuntza.",
+            "la": "Refluxus textus, lectio clara, accommodatio contrastus."
+          },
+          "webTools": [
+            {
+              "name": "Adobe Acrobat",
+              "url": "https://www.adobe.com/acrobat",
+              "logo": "https://logo.clearbit.com/adobe.com"
+            },
+            {
+              "name": "Natural Reader",
+              "url": "https://www.naturalreaders.com",
+              "logo": "https://logo.clearbit.com/naturalreaders.com"
+            }
+          ]
+        },
+        {
+          "id": "1-1-10",
+          "code": "1.1.10",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Online",
+            "en": "Online",
+            "eu": "Online",
+            "la": "Online"
+          },
+          "activity": {
+            "es": "Seguimiento de clases virtuales.",
+            "en": "Following virtual classes.",
+            "eu": "Klase birtualen jarraipena.",
+            "la": "Sequentia classium virtualium."
+          },
+          "designOptions": {
+            "es": "Subtítulos personalizables, velocidad de reproducción variable, diseño de diapositivas con alto contraste.",
+            "en": "Customizable subtitles, variable playback speed, high contrast slide design.",
+            "eu": "Azpititulu pertsonalizagarriak, abiadura aldakorra, kontraste handiko diapositibak.",
+            "la": "Subtituli accommodabiles, velocitas variabilis, diapositivae contrastus alti."
+          },
+          "webTools": [
+            {
+              "name": "Zoom",
+              "url": "https://zoom.us",
+              "logo": "https://logo.clearbit.com/zoom.us"
+            },
+            {
+              "name": "YouTube",
+              "url": "https://youtube.com",
+              "logo": "https://logo.clearbit.com/youtube.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "considerationId": "1-2",
+      "examples": [
+        {
+          "id": "1-2-1",
+          "code": "1.2.1",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Infantil",
+            "en": "Pre-school",
+            "eu": "Haur Hezkuntza",
+            "la": "Infantilis"
+          },
+          "curricularArea": {
+            "es": "Música",
+            "en": "Music",
+            "eu": "Musika",
+            "la": "Musica"
+          },
+          "activity": {
+            "es": "Aprender una canción sobre los animales.",
+            "en": "Learning a song about animals.",
+            "eu": "Animaliei buruzko abesti bat ikastea.",
+            "la": "Carmen de animalibus discere."
+          },
+          "designOptions": {
+            "es": "Pictogramas de cada animal, subtítulos con palabras clave, vibración o luces.",
+            "en": "Pictograms of each animal, subtitles with keywords, vibration or lights.",
+            "eu": "Piktogramak, azpitituluak, bibrazioa edo argiak.",
+            "la": "Pictogrammata, subtituli, vibratio vel luces."
+          },
+          "webTools": [
+            {
+              "name": "YouTube",
+              "url": "https://youtube.com",
+              "logo": "https://logo.clearbit.com/youtube.com"
+            },
+            {
+              "name": "ARASAAC",
+              "url": "https://arasaac.org",
+              "logo": "https://logo.clearbit.com/arasaac.org"
+            },
+            {
+              "name": "Genially",
+              "url": "https://genial.ly",
+              "logo": "https://logo.clearbit.com/genial.ly"
+            }
+          ]
+        },
+        {
+          "id": "1-2-2",
+          "code": "1.2.2",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Infantil",
+            "en": "Pre-school",
+            "eu": "Haur Hezkuntza",
+            "la": "Infantilis"
+          },
+          "curricularArea": {
+            "es": "Rutinas",
+            "en": "Routines",
+            "eu": "Errutinak",
+            "la": "Consuetudines"
+          },
+          "activity": {
+            "es": "Explicar las rutinas diarias del aula.",
+            "en": "Explaining daily classroom routines.",
+            "eu": "Ikasgelako eguneroko errutinak azaltzea.",
+            "la": "Consuetudines diurnas scholae explicare."
+          },
+          "designOptions": {
+            "es": "Panel visual con imágenes, grabación de voz describiendo cada paso, objetos reales.",
+            "en": "Visual panel with images, voice recording describing each step, real objects.",
+            "eu": "Panel bisuala, ahots grabazioa, benetako objektuak.",
+            "la": "Tabula visualis, vox registrata, obiecta realia."
+          },
+          "webTools": [
+            {
+              "name": "SoundCloud",
+              "url": "https://soundcloud.com",
+              "logo": "https://logo.clearbit.com/soundcloud.com"
+            },
+            {
+              "name": "Canva",
+              "url": "https://canva.com",
+              "logo": "https://logo.clearbit.com/canva.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-3",
+          "code": "1.2.3",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias",
+            "en": "Science",
+            "eu": "Zientziak",
+            "la": "Scientiae"
+          },
+          "activity": {
+            "es": "Ver un vídeo sobre el ciclo del agua.",
+            "en": "Watching a video about the water cycle.",
+            "eu": "Uraren zikloari buruzko bideo bat ikustea.",
+            "la": "Video de cyclo aquae spectare."
+          },
+          "designOptions": {
+            "es": "Subtítulos activados, transcripción descargable, esquema visual del proceso.",
+            "en": "Subtitles activated, downloadable transcript, visual outline of the process.",
+            "eu": "Azpitituluak, transkripzioa, eskema bisuala.",
+            "la": "Subtituli, transcriptio, schema visuale."
+          },
+          "webTools": [
+            {
+              "name": "Edpuzzle",
+              "url": "https://edpuzzle.com",
+              "logo": "https://logo.clearbit.com/edpuzzle.com"
+            },
+            {
+              "name": "MindMeister",
+              "url": "https://mindmeister.com",
+              "logo": "https://logo.clearbit.com/mindmeister.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-4",
+          "code": "1.2.4",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias Sociales",
+            "en": "Social Sciences",
+            "eu": "Gizarte Zientziak",
+            "la": "Scientiae Sociales"
+          },
+          "activity": {
+            "es": "Estudiar distintos paisajes.",
+            "en": "Studying different landscapes.",
+            "eu": "Paisai ezberdinak ikastea.",
+            "la": "Diversas terras studere."
+          },
+          "designOptions": {
+            "es": "Descripciones en audio de las imágenes, maqueta táctil del relieve, texto simplificado.",
+            "en": "Audio descriptions of images, tactile relief model, simplified text.",
+            "eu": "Audio deskribapenak, maketa ukigarria, testu sinplifikatua.",
+            "la": "Descriptiones audibiles, exemplar tactile, textus simplificatus."
+          },
+          "webTools": [
+            {
+              "name": "ThingLink",
+              "url": "https://thinglink.com",
+              "logo": "https://logo.clearbit.com/thinglink.com"
+            },
+            {
+              "name": "Vocaroo",
+              "url": "https://vocaroo.com",
+              "logo": "https://logo.clearbit.com/vocaroo.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-5",
+          "code": "1.2.5",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Secundaria",
+            "en": "Secondary",
+            "eu": "Bigarren Hezkuntza",
+            "la": "Secundaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias",
+            "en": "Science",
+            "eu": "Zientziak",
+            "la": "Scientiae"
+          },
+          "activity": {
+            "es": "Reacción química en laboratorio.",
+            "en": "Chemical reaction in lab.",
+            "eu": "Erreakzio kimikoa laborategian.",
+            "la": "Reactio chemica in laboratorio."
+          },
+          "designOptions": {
+            "es": "Instrucciones escritas y explicación oral, vídeo con subtítulos, diagrama visual del proceso.",
+            "en": "Written instructions and oral explanation, video with subtitles, visual process diagram.",
+            "eu": "Idatzizko eta ahozko argibideak, azpitituludun bideoa, diagrama bisuala.",
+            "la": "Instructiones scriptae et orales, video cum subtitulis, diagramma visuale."
+          },
+          "webTools": [
+            {
+              "name": "PhET",
+              "url": "https://phet.colorado.edu",
+              "logo": "https://logo.clearbit.com/colorado.edu"
+            },
+            {
+              "name": "Microsoft Stream",
+              "url": "https://web.microsoftstream.com",
+              "logo": "https://logo.clearbit.com/microsoft.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-6",
+          "code": "1.2.6",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Secundaria",
+            "en": "Secondary",
+            "eu": "Bigarren Hezkuntza",
+            "la": "Secundaria"
+          },
+          "curricularArea": {
+            "es": "Historia",
+            "en": "History",
+            "eu": "Historia",
+            "la": "Historia"
+          },
+          "activity": {
+            "es": "Escuchar un pódcast histórico.",
+            "en": "Listening to a history podcast.",
+            "eu": "Historiaren podcast bat entzutea.",
+            "la": "Podcast historicum audire."
+          },
+          "designOptions": {
+            "es": "Transcripción completa, línea de tiempo visual, palabras clave destacadas.",
+            "en": "Full transcript, visual timeline, highlighted keywords.",
+            "eu": "Transkripzio osoa, denbora-lerro bisuala, gako-hitzak.",
+            "la": "Transcriptio plena, linea temporis visualis, verba clavia."
+          },
+          "webTools": [
+            {
+              "name": "Spotify",
+              "url": "https://spotify.com",
+              "logo": "https://logo.clearbit.com/spotify.com"
+            },
+            {
+              "name": "Otter.ai",
+              "url": "https://otter.ai",
+              "logo": "https://logo.clearbit.com/otter.ai"
+            },
+            {
+              "name": "Tiki-Toki",
+              "url": "https://www.tiki-toki.com",
+              "logo": "https://logo.clearbit.com/tiki-toki.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-7",
+          "code": "1.2.7",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Bachillerato",
+            "en": "High School",
+            "eu": "Batxilergoa",
+            "la": "Baccalaureatus"
+          },
+          "curricularArea": {
+            "es": "Arte",
+            "en": "Art",
+            "eu": "Artea",
+            "la": "Ars"
+          },
+          "activity": {
+            "es": "Analizar una pintura famosa.",
+            "en": "Analyzing a famous painting.",
+            "eu": "Pintura ospetsu bat aztertzea.",
+            "la": "Picturam claram resolvere."
+          },
+          "designOptions": {
+            "es": "Audiodescripción detallada, texto explicativo, relieve táctil de la composición.",
+            "en": "Detailed audio description, explanatory text, tactile relief of composition.",
+            "eu": "Audio deskribapena, azalpen testua, erliebe ukigarria.",
+            "la": "Descriptio audibilis, textus explicatorius, relevium tactile."
+          },
+          "webTools": [
+            {
+              "name": "Voice Dream Reader",
+              "url": "https://voicedream.com",
+              "logo": "https://logo.clearbit.com/voicedream.com"
+            },
+            {
+              "name": "ThingLink",
+              "url": "https://thinglink.com",
+              "logo": "https://logo.clearbit.com/thinglink.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-8",
+          "code": "1.2.8",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Bachillerato",
+            "en": "High School",
+            "eu": "Batxilergoa",
+            "la": "Baccalaureatus"
+          },
+          "curricularArea": {
+            "es": "Economía",
+            "en": "Economics",
+            "eu": "Ekonomia",
+            "la": "Oeconomia"
+          },
+          "activity": {
+            "es": "Analizar datos estadísticos.",
+            "en": "Analyzing statistical data.",
+            "eu": "Datu estatistikoak aztertzea.",
+            "la": "Data statistica resolvere."
+          },
+          "designOptions": {
+            "es": "Gráfico visual, explicación oral grabada, tabla de datos en texto.",
+            "en": "Visual chart, recorded oral explanation, text data table.",
+            "eu": "Grafiko bisuala, ahozko azalpena, datu-taula.",
+            "la": "Charta visualis, explicatio oralis, tabula datorum."
+          },
+          "webTools": [
+            {
+              "name": "Excel",
+              "url": "https://office.com",
+              "logo": "https://logo.clearbit.com/office.com"
+            },
+            {
+              "name": "Loom",
+              "url": "https://loom.com",
+              "logo": "https://logo.clearbit.com/loom.com"
+            },
+            {
+              "name": "NVDA",
+              "url": "https://www.nvaccess.org",
+              "logo": "https://logo.clearbit.com/nvaccess.org"
+            }
+          ]
+        },
+        {
+          "id": "1-2-9",
+          "code": "1.2.9",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Online",
+            "en": "Online",
+            "eu": "Online",
+            "la": "Online"
+          },
+          "activity": {
+            "es": "Seguir una conferencia online.",
+            "en": "Following an online conference.",
+            "eu": "Online hitzaldi bat jarraitzea.",
+            "la": "Conferentiam online sequi."
+          },
+          "designOptions": {
+            "es": "Subtítulos automáticos editados, apuntes en PDF accesible, audio descargable.",
+            "en": "Edited auto-subtitles, accessible PDF notes, downloadable audio.",
+            "eu": "Azpitituluak, ohar eskuragarriak, audio deskargagarria.",
+            "la": "Subtituli, notae accessibiles, audio downloadabile."
+          },
+          "webTools": [
+            {
+              "name": "Zoom",
+              "url": "https://zoom.us",
+              "logo": "https://logo.clearbit.com/zoom.us"
+            },
+            {
+              "name": "Adobe Acrobat",
+              "url": "https://www.adobe.com/acrobat",
+              "logo": "https://logo.clearbit.com/adobe.com"
+            }
+          ]
+        },
+        {
+          "id": "1-2-10",
+          "code": "1.2.10",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Investigación",
+            "en": "Research",
+            "eu": "Ikertzailea",
+            "la": "Investigatio"
+          },
+          "activity": {
+            "es": "Exposición de trabajos del alumnado.",
+            "en": "Student work presentation.",
+            "eu": "Ikasleen lanen aurkezpena.",
+            "la": "Expositio operum discipro."
+          },
+          "designOptions": {
+            "es": "Diapositivas visuales claras, narración oral, resumen escrito previo, infografía final.",
+            "en": "Clear visual slides, oral narration, prior written summary, final infographic.",
+            "eu": "Diapositiba argiak, ahozko narrazioa, idatzizko laburpena, infografia.",
+            "la": "Diapositivae clarae, narratio oralis, summarium scriptum, infographia."
+          },
+          "webTools": [
+            {
+              "name": "PowerPoint",
+              "url": "https://office.com",
+              "logo": "https://logo.clearbit.com/office.com"
+            },
+            {
+              "name": "Canva",
+              "url": "https://canva.com",
+              "logo": "https://logo.clearbit.com/canva.com"
+            },
+            {
+              "name": "Google Docs",
+              "url": "https://docs.google.com",
+              "logo": "https://logo.clearbit.com/google.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "considerationId": "1-3",
+      "examples": [
+        {
+          "id": "1-3-1",
+          "code": "1.3.1",
+          "color": "#8E6BBE",
+          "educationalLevel": {
+            "es": "Infantil",
+            "en": "Pre-school",
+            "eu": "Haur Hezkuntza",
+            "la": "Infantilis"
+          },
+          "curricularArea": {
+            "es": "Conocimiento del entorno",
+            "en": "Environmental Studies",
+            "eu": "Ingurunearen Ezagutza",
+            "la": "Cognitio Rerum"
+          },
+          "activity": {
+            "es": "Explorar animales de la granja mediante imágenes y sonidos.",
+            "en": "Exploring farm animals through images and sounds.",
+            "eu": "Baserriko animaliak irudi eta soinuen bidez esploratzea.",
+            "la": "Animalia rustica per imagines et sonos explorare."
+          },
+          "designOptions": {
+            "es": "Audiodescripciones, figuras táctiles, sonidos reales y cuentos con diversidad cultural.",
+            "en": "Audio descriptions, tactile figures, real sounds, and culturally diverse stories.",
+            "eu": "Audio-deskribapenak, irudi ukigarriak, benetako soinuak eta kultura-aniztasuneko ipuinak.",
+            "la": "Descriptiones auditae, figurae tactiles, soni reales, fabulae culturaliter variae."
+          },
+          "webTools": [
+            {
+              "name": "Book Creator",
+              "url": "https://bookcreator.com",
+              "logo": "https://logo.clearbit.com/bookcreator.com"
+            },
+            {
+              "name": "YouTube Kids",
+              "url": "https://www.youtubekids.com",
+              "logo": "https://logo.clearbit.com/youtube.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-2",
+          "code": "1.3.2",
+          "color": "#6F5094",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias Naturales",
+            "en": "Natural Science",
+            "eu": "Natura Zientziak",
+            "la": "Scientiae Naturales"
+          },
+          "activity": {
+            "es": "Aprender las partes de una planta con apoyo visual y táctil.",
+            "en": "Learning the parts of a plant with visual and tactile support.",
+            "eu": "Landare baten atalak ikastea ikusmen eta ukimen laguntzarekin.",
+            "la": "Partes plantae discere cum auxilio visivo et tactili."
+          },
+          "designOptions": {
+            "es": "Descripción oral de esquemas, maqueta táctil y ejemplos de plantas de distintas culturas.",
+            "en": "Oral description of diagrams, tactile model, and plant examples from different cultures.",
+            "eu": "Eskemen ahozko deskribapena, maketa ukigarria eta kultura ezberdinetako landare adibideak.",
+            "la": "Descriptio oralis diagrammatum, exemplar tactile, exempla plantarum e culturis variis."
+          },
+          "webTools": [
+            {
+              "name": "ThingLink",
+              "url": "https://www.thinglink.com",
+              "logo": "https://logo.clearbit.com/thinglink.com"
+            },
+            {
+              "name": "Canva",
+              "url": "https://www.canva.com",
+              "logo": "https://logo.clearbit.com/canva.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-3",
+          "code": "1.3.3",
+          "color": "#A267AC",
+          "educationalLevel": {
+            "es": "Primaria",
+            "en": "Primary",
+            "eu": "Lehen Hezkuntza",
+            "la": "Primaria"
+          },
+          "curricularArea": {
+            "es": "Ciencias Sociales",
+            "en": "Social Studies",
+            "eu": "Gizarte Zientziak",
+            "la": "Scientiae Sociales"
+          },
+          "activity": {
+            "es": "Descubrir inventos y descubrimientos de diferentes culturas.",
+            "en": "Discovering inventions and discoveries from different cultures.",
+            "eu": "Kultura ezberdinetako asmakizun eta aurkikuntzak ezagutzea.",
+            "la": "Inventiones et inventa ex culturis variis cognoscere."
+          },
+          "designOptions": {
+            "es": "Biografías en audio y texto, línea de tiempo narrada y visual, referentes diversos.",
+            "en": "Biographies in audio and text, narrated and visual timeline, diverse role models.",
+            "eu": "Biografiak audioz eta testuz, denbora-lerro bisual eta narratua, erreferente anitzak.",
+            "la": "Vitae in audio et textu, linea temporis visa et narrata, exempla diversa."
+          },
+          "webTools": [
+            {
+              "name": "Genially",
+              "url": "https://genial.ly",
+              "logo": "https://logo.clearbit.com/genial.ly"
+            },
+            {
+              "name": "TimeToast",
+              "url": "https://www.timetoast.com",
+              "logo": "https://logo.clearbit.com/timetoast.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-4",
+          "code": "1.3.4",
+          "color": "#5C80BC",
+          "educationalLevel": {
+            "es": "Secundaria",
+            "en": "Secondary",
+            "eu": "Bigarren Hezkuntza",
+            "la": "Secundaria"
+          },
+          "curricularArea": {
+            "es": "Física y Química",
+            "en": "Physics and Chemistry",
+            "eu": "Fisika eta Kimika",
+            "la": "Physica et Chemia"
+          },
+          "activity": {
+            "es": "Comprender el sistema solar mediante simulaciones y modelos físicos.",
+            "en": "Understanding the solar system through simulations and physical models.",
+            "eu": "Eguzki-sistema simulazio eta maketa fisikoen bidez ulertzea.",
+            "la": "Systema solare per simulationes et exempla physica intellegere."
+          },
+          "designOptions": {
+            "es": "Narraciones orales de animaciones, maquetas táctiles y aportaciones de astrónomos de distintas culturas.",
+            "en": "Oral narration of animations, tactile models, and contributions from astronomers of different cultures.",
+            "eu": "Animazioen ahozko narrazioa, maketa ukigarriak eta kultura ezberdinetako astronomoen ekarpenak.",
+            "la": "Narratio oralis animationum, exempla tactilia, contributiones astronomorum variarum culturarum."
+          },
+          "webTools": [
+            {
+              "name": "PhET",
+              "url": "https://phet.colorado.edu",
+              "logo": "https://logo.clearbit.com/colorado.edu"
+            },
+            {
+              "name": "NASA Eyes",
+              "url": "https://eyes.nasa.gov",
+              "logo": "https://logo.clearbit.com/nasa.gov"
+            }
+          ]
+        },
+        {
+          "id": "1-3-5",
+          "code": "1.3.5",
+          "color": "#F4A259",
+          "educationalLevel": {
+            "es": "Secundaria",
+            "en": "Secondary",
+            "eu": "Bigarren Hezkuntza",
+            "la": "Secundaria"
+          },
+          "curricularArea": {
+            "es": "Lengua y Literatura",
+            "en": "Language and Literature",
+            "eu": "Hizkuntza eta Literatura",
+            "la": "Lingua et Litterae"
+          },
+          "activity": {
+            "es": "Analizar noticias desde distintas perspectivas culturales.",
+            "en": "Analyzing news from different cultural perspectives.",
+            "eu": "Albisteak kultura ikuspegi ezberdinetatik aztertzea.",
+            "la": "Nuntios ex perspectivis culturalibus variis analysare."
+          },
+          "designOptions": {
+            "es": "Texto + audio, conversión a voz, análisis de estereotipos y comparación de medios diversos.",
+            "en": "Text + audio, text-to-speech, stereotype analysis, and comparison of diverse media.",
+            "eu": "Testua eta audioa, ahots bihurketa, estereotipoen analisia eta hedabide ezberdinen konparaketa.",
+            "la": "Textus et audio, conversio vocis, analysis stereotyporum, comparatio mediorum diversorum."
+          },
+          "webTools": [
+            {
+              "name": "Natural Reader",
+              "url": "https://www.naturalreaders.com",
+              "logo": "https://logo.clearbit.com/naturalreaders.com"
+            },
+            {
+              "name": "Padlet",
+              "url": "https://padlet.com",
+              "logo": "https://logo.clearbit.com/padlet.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-6",
+          "code": "1.3.6",
+          "color": "#BC4B51",
+          "educationalLevel": {
+            "es": "Bachillerato",
+            "en": "High School",
+            "eu": "Batxilergoa",
+            "la": "Baccalaureatus"
+          },
+          "curricularArea": {
+            "es": "Historia",
+            "en": "History",
+            "eu": "Historia",
+            "la": "Historia"
+          },
+          "activity": {
+            "es": "Estudiar movimientos por los derechos humanos.",
+            "en": "Studying human rights movements.",
+            "eu": "Giza eskubideen aldeko mugimenduak aztertzea.",
+            "la": "Motus pro iuribus humanis studere."
+          },
+          "designOptions": {
+            "es": "Testimonios en audio, documentos accesibles y presencia de referentes diversos.",
+            "en": "Audio testimonies, accessible documents, and diverse role models.",
+            "eu": "Audio-testigantzak, dokumentu irisgarriak eta erreferente anitzak.",
+            "la": "Testimonia audita, documenta accessibilia, exempla diversa."
+          },
+          "webTools": [
+            {
+              "name": "YouTube",
+              "url": "https://www.youtube.com",
+              "logo": "https://logo.clearbit.com/youtube.com"
+            },
+            {
+              "name": "Canva",
+              "url": "https://www.canva.com",
+              "logo": "https://logo.clearbit.com/canva.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-7",
+          "code": "1.3.7",
+          "color": "#3C6E71",
+          "educationalLevel": {
+            "es": "Bachillerato",
+            "en": "High School",
+            "eu": "Batxilergoa",
+            "la": "Baccalaureatus"
+          },
+          "curricularArea": {
+            "es": "Lengua y Literatura",
+            "en": "Language and Literature",
+            "eu": "Hizkuntza eta Literatura",
+            "la": "Lingua et Litterae"
+          },
+          "activity": {
+            "es": "Analizar una novela desde la representación de identidades.",
+            "en": "Analyzing a novel through identity representation.",
+            "eu": "Nobela bat identitateen errepresentaziotik aztertzea.",
+            "la": "Novellam per repraesentationem identitatum analysare."
+          },
+          "designOptions": {
+            "es": "Audiolibro + texto, contexto cultural del autor/a y debate sobre diversidad.",
+            "en": "Audiobook + text, author’s cultural context, and diversity discussion.",
+            "eu": "Audio-liburua eta testua, egilearen testuinguru kulturala eta aniztasunari buruzko eztabaida.",
+            "la": "Liber audio et textus, contextus culturalis auctoris, disputatio de diversitate."
+          },
+          "webTools": [
+            {
+              "name": "Kindle",
+              "url": "https://www.amazon.com/kindle",
+              "logo": "https://logo.clearbit.com/amazon.com"
+            },
+            {
+              "name": "Google Docs",
+              "url": "https://docs.google.com",
+              "logo": "https://logo.clearbit.com/google.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-8",
+          "code": "1.3.8",
+          "color": "#E36414",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Ciencias de la Salud",
+            "en": "Health Sciences",
+            "eu": "Osasun Zientziak",
+            "la": "Scientiae Salutis"
+          },
+          "activity": {
+            "es": "Analizar un caso clínico con variables culturales y sociales.",
+            "en": "Analyzing a clinical case with cultural and social variables.",
+            "eu": "Kasu kliniko bat aldagai kultural eta sozialekin aztertzea.",
+            "la": "Casum clinicum cum variabilibus culturalibus et socialibus analysare."
+          },
+          "designOptions": {
+            "es": "Versión en audio, gráficos descritos verbalmente y diversidad de contextos reales.",
+            "en": "Audio version, verbally described graphics, and diverse real-life contexts.",
+            "eu": "Audio bertsioa, ahoz deskribatutako grafikoak eta benetako testuinguru anitzak.",
+            "la": "Versio audio, graphica verbis descripta, contextus reales diversi."
+          },
+          "webTools": [
+            {
+              "name": "Voice Dream Reader",
+              "url": "https://www.voicedream.com",
+              "logo": "https://logo.clearbit.com/voicedream.com"
+            },
+            {
+              "name": "Miro",
+              "url": "https://miro.com",
+              "logo": "https://logo.clearbit.com/miro.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-9",
+          "code": "1.3.9",
+          "color": "#577590",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Historia de la Ciencia",
+            "en": "History of Science",
+            "eu": "Zientziaren Historia",
+            "la": "Historia Scientiae"
+          },
+          "activity": {
+            "es": "Revisar aportaciones científicas de distintas regiones del mundo.",
+            "en": "Reviewing scientific contributions from different regions of the world.",
+            "eu": "Munduko eskualde ezberdinetako ekarpen zientifikoak berrikustea.",
+            "la": "Contributiones scientificas ex regionibus variis mundi recensere."
+          },
+          "designOptions": {
+            "es": "Podcasts + textos, mapas conceptuales accesibles y visibilización de ciencia no occidental.",
+            "en": "Podcasts + texts, accessible concept maps, and visibility of non-Western science.",
+            "eu": "Podcastak eta testuak, kontzeptu-mapa irisgarriak eta mendebaldekoa ez den zientziaren ikusgarritasuna.",
+            "la": "Podcasts et textus, mappae conceptuum accessibiles, scientia non occidentalis visibilis."
+          },
+          "webTools": [
+            {
+              "name": "Spotify",
+              "url": "https://www.spotify.com",
+              "logo": "https://logo.clearbit.com/spotify.com"
+            },
+            {
+              "name": "MindMeister",
+              "url": "https://www.mindmeister.com",
+              "logo": "https://logo.clearbit.com/mindmeister.com"
+            }
+          ]
+        },
+        {
+          "id": "1-3-10",
+          "code": "1.3.10",
+          "color": "#4D908E",
+          "educationalLevel": {
+            "es": "Universidad",
+            "en": "University",
+            "eu": "Unibertsitatea",
+            "la": "Universitas"
+          },
+          "curricularArea": {
+            "es": "Ciencias Sociales",
+            "en": "Social Sciences",
+            "eu": "Gizarte Zientziak",
+            "la": "Scientiae Sociales"
+          },
+          "activity": {
+            "es": "Proyecto autobiográfico vinculado a procesos históricos.",
+            "en": "Autobiographical project linked to historical processes.",
+            "eu": "Proiektu autobiografikoa prozesu historikoekin lotuta.",
+            "la": "Proiectum autobiographicum cum processibus historicis conexum."
+          },
+          "designOptions": {
+            "es": "Entrevistas en audio, línea de tiempo visual y narrada, integración de identidades culturales propias.",
+            "en": "Audio interviews, visual and narrated timeline, integration of personal cultural identities.",
+            "eu": "Audio-elkarrizketak, denbora-lerro bisual eta narratua, identitate kultural pertsonalen integrazioa.",
+            "la": "Colloquia audita, linea temporis visa et narrata, identitates culturales personales integratae."
+          },
+          "webTools": [
+            {
+              "name": "Canva",
+              "url": "https://www.canva.com",
+              "logo": "https://logo.clearbit.com/canva.com"
+            },
+            {
+              "name": "Anchor",
+              "url": "https://anchor.fm",
+              "logo": "https://logo.clearbit.com/anchor.fm"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

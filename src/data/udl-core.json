@@ -1,10 +1,22 @@
 {
   "udl": {
     "title": {
-      "es": "Pautas de Diseño Universal para el Aprendizaje, versión 3.0",
-      "en": "Universal Design for Learning Guidelines, version 3.0",
-      "eu": "Ikaskuntzarako Diseinu Unibertsalaren Jarraibideak, 3.0 bertsioa",
-      "la": "Consilia Designandi Universalis pro Disciplina, versio 3.0"
+      "es": "Diseño Universal para el Aprendizaje",
+      "en": "Universal Design for Learning",
+      "eu": "Ikaskuntzarako Diseinu Unibertsala",
+      "la": "Designatio Universalis pro Discendo"
+    },
+    "version": {
+      "es": "Versión 3.0",
+      "en": "Version 3.0",
+      "eu": "3.0 bertsioa",
+      "la": "Versio 3.0"
+    },
+    "acronym": {
+      "es": "DUA",
+      "en": "UDL",
+      "eu": "IDU",
+      "la": "DUD"
     },
     "author": "CAST",
     "year": 2024,
@@ -14,24 +26,7 @@
       "eu": "Ikaslea ahalduntzea, nahita eta hausnartzaile, baliabidetsu eta benetako, estrategiko eta ekintzara bideratua izan dadin.",
       "la": "Discipulum potestate praebe ut sit propositus et reflexivus, sollers et authenticus, strategicus et ad actionem directus."
     },
-    "whatIsUDL": {
-      "es": "¿Qué es el Diseño Universal para el Aprendizaje?",
-      "en": "What is Universal Design for Learning?",
-      "eu": "Zer da Ikaskuntzarako Diseinu Unibertsala?",
-      "la": "Quid est Designatio Universalis pro Discendo?"
-    },
-    "udlDescription": {
-      "es": "El Diseño Universal para el Aprendizaje (UDL) es un marco educativo basado en la investigación que guía el desarrollo de entornos de aprendizaje flexibles que pueden acomodar las diferencias individuales de los estudiantes.",
-      "en": "Universal Design for Learning (UDL) is a research-based educational framework that guides the development of flexible learning environments that can accommodate individual learner differences.",
-      "eu": "Ikaskuntzarako Diseinu Unibertsala (UDL) ikerketan oinarritutako hezkuntza esparrua da, ikasleen banakako ezberdintasunak onartu ditzaketen ikaskuntza ingurune malguak garatzen laguntzen duena.",
-      "la": "Designatio Universalis pro Discendo (UDL) est structura educativa in investigatione fundata quae dirigit evolutionem ambientium discendi flexibilium quae differentias individuales discentium accommodare possunt."
-    },
-    "udlPrinciples": {
-      "es": "El marco UDL se organiza en torno a tres principios fundamentales:",
-      "en": "The UDL framework is organized around three fundamental principles:",
-      "eu": "UDL esparrua hiru oinarrizko printzipioen inguruan antolatzen da:",
-      "la": "Structura UDL circa tria principia fundamentalia ordinatur:"
-    },
+
     "terminology": {
       "network": {
         "es": "Red",
@@ -43,31 +38,14 @@
         "es": "Redes",
         "en": "Networks",
         "eu": "Sareak",
-        "la": "Retiae"
-      },
-      "guideline": {
-        "es": "Pauta",
-        "en": "Guideline",
-        "eu": "Gidalerro",
-        "la": "Directio"
-      },
-      "guidelines": {
-        "es": "Pautas",
-        "en": "Guidelines",
-        "eu": "Gidalerroak",
-        "la": "Directiones"
-      },
-      "consideration": {
-        "es": "Consideración",
-        "en": "Consideration",
-        "eu": "Kontuan hartzea",
-        "la": "Consideratio"
-      },
-      "considerations": {
-        "es": "Consideraciones",
-        "en": "Considerations",
-        "eu": "Kontuan hartzeak",
-        "la": "Considerationes"
+        "la": "Retiae",
+        "total": 3,
+        "definition": {
+          "es": "En el contexto del Diseño Universal para el Aprendizaje (DUA), las **redes neuronales** son grupos especializados de neuronas que rigen diferentes componentes de los procesos de aprendizaje. Aunque en la realidad estas redes siempre **actúan de forma interrelacionada** como un organismo general, el modelo DUA las divide artificialmente en tres tipos para facilitar una aproximación sistemática y comprender la variabilidad de los alumnos.\n\nLas tres redes principales identificadas en el modelo son:\n\n*   **Redes afectivas:** Ubicadas en la zona central del cerebro, son las responsables de establecer prioridades, generar emociones y determinar la **motivación e implicación** del estudiante. Responden al **\"porqué\" del aprendizaje**, permitiendo que los alumnos se involucren de forma activa y decidida.\n*   **Redes de reconocimiento:** Situadas en la parte posterior del cerebro, se encargan de **percibir la información** a través de los sentidos y captar patrones complejos (como letras, sonidos o estilos literarios) para transformarlos en conocimiento. Se vinculan con el **\"qué\" del aprendizaje**, facilitando que el estudiante identifique y maneje los recursos para aprender.\n*   **Redes estratégicas:** Estas redes rigen las funciones ejecutivas y son las encargadas de **planificar, organizar y monitorizar** las acciones tanto físicas como mentales para alcanzar una meta. Representan el **\"cómo\" del aprendizaje**, permitiendo que el estudiante sea estratégico y se oriente al cumplimiento de sus objetivos.\n\nLa neurociencia ha demostrado que el cerebro posee **plasticidad y dinamismo**, lo que significa que la experiencia y la intervención educativa van moldeando estas redes a lo largo del tiempo. Por ello, el DUA utiliza este paradigma de redes neuronales como ejes para organizar sus principios y pautas, buscando eliminar las barreras curriculares y ofrecer **múltiples formas de representación, acción y expresión, e implicación** que activen estas funciones cerebrales en todos los estudiantes.",
+          "en": "In the context of Universal Design for Learning (UDL), **neural networks** are specialized groups of neurons that govern different components of learning processes. Although in reality these networks always **act interrelatedly** as a general organism, the UDL model artificially divides them into three types to facilitate a systematic approach and understand learner variability.\n\nThe three main networks identified in the model are:\n\n*   **Affective Networks:** Located in the central area of the brain, they are responsible for setting priorities, generating emotions, and determining student **motivation and engagement**. They respond to the **\"why\" of learning**, allowing students to get involved actively and decisively.\n*   **Recognition Networks:** Located in the posterior part of the brain, they are responsible for **perceiving information** through the senses and capturing complex patterns (such as letters, sounds, or literary styles) to transform them into knowledge. They are linked to the **\"what\" of learning**, facilitating the student to identify and manage resources for learning.\n*   **Strategic Networks:** These networks govern executive functions and are responsible for **planning, organizing, and monitoring** both physical and mental actions to achieve a goal. They represent the **\"how\" of learning**, allowing the student to be strategic and oriented towards achieving their objectives.\n\nNeuroscience has demonstrated that the brain possesses **plasticity and dynamism**, which means that experience and educational intervention mold these networks over time. Therefore, UDL uses this neural network paradigm as axes to organize its principles and guidelines, seeking to eliminate curricular barriers and offer **multiple means of representation, action and expression, and engagement** that activate these brain functions in all students.",
+          "eu": "Ikaskuntzarako Diseinu Unibertsala (IDU) testuinguruan, **sare neuronalak** ikaskuntza prozesuen osagai desberdinak gobernatzen dituzten neurona talde espezializatuak dira. Errealitatean sare hauek beti **elkarrekin erlazionatuta** jokatzen duten organismo orokor gisa, IDU ereduak artifizialki hiru motatan banatzen ditu hurbilketa sistematikoa errazteko eta ikasleen aldakortasuna ulertzeko.\n\nEreduan identifikatutako hiru sare nagusiak hauek dira:\n\n*   **Sare afektiboak:** Garunaren erdiko eremuan kokatuak, lehentasunak ezartzeaz, emozioak sortzeaz eta ikaslearen **motibazioa eta inplikazioa** zehazteaz arduratzen dira. Ikaskuntzaren **\"zergatia\"**-ri erantzuten diote, ikasleak modu aktiboan eta erabakitasunez parte hartzea ahalbidetuz.\n*   **Aitortza sareak:** Garunaren atzealdean kokatuak, zentzumenen bidez **informazioa hautemateaz** eta eredu konplexuak (letrak, soinuak edo estilo literarioak bezala) atzemateaz arduratzen dira ezagutza bihurtzeko. Ikaskuntzaren **\"zer\"**-arekin lotuta daude, ikasleak ikasteko baliabideak identifikatu eta kudeatu ditzan erraztuz.\n*   **Sare estrategikoak:** Sare hauek funtzio exekutiboak gobernatzen dituzte eta helburu bat lortzeko ekintza fisiko zein mentalak **planifikatu, antolatu eta monitorizatzeaz** arduratzen dira. Ikaskuntzaren **\"nola\"** adierazten dute, ikaslea estrategikoa izatea eta bere helburuak lortzera bideratzea ahalbidetuz.\n\nNeurozientziak erakutsi du garunak **plastizitatea eta dinamismoa** dituela, eta horrek esan nahi du esperientziak eta hezkuntza esku-hartzeak sare hauek moldatzen dituztela denboran zehar. Horregatik, IDUk sare neuronalen paradigma hau erabiltzen du bere printzipioak eta jarraibideak antolatzeko ardatz gisa, oztopo kurrikularrak ezabatu eta ikasle guztiengan garuneko funtzio hauek aktibatzen dituzten **irudikapen, ekintza eta adierazpen, eta inplikazio mota anitzak** eskaintzeko asmoz.",
+          "la": "In contextu Designationis Universalis pro Discendo (DUD), **retia neuronalia** sunt greges specializati neuronorum qui diversas partes processuum discendi regunt. Quamvis in re vera haec retia semper **inter se conexa agant** ut organismus generalis, exemplar DUD ea artificialiter in tria genera dividit ad appropinquationem systematicam faciliorem reddendam et variabilitatem discipulorum intellegendam.\n\nTria retia principalia in exemplari identificata sunt:\n\n*   **Retia affectiva:** In media parte cerebri sita, responsabilia sunt prioritatibus constituendis, emotionibus generandis et **motivatione atque implicatione** discipuli determinandis. Respondent **\"cur\" discendi**, sinentes discipulos active et determinate participare.\n*   **Retia recognitionis:** In parte posteriore cerebri sita, curant **informationem percipere** per sensus et exemplaria complexa (sicut litteras, sonos aut stilos litterarios) capere ut ea in scientiam convertant. Conectuntur cum **\"quid\" discendi**, facilius reddentes ut discipulus facultates ad discendum identificet et tractet.\n*   **Retia strategica:** Haec retia functiones exsecutivas regunt et curant actiones tam physicas quam mentales **planificare, ordinare et monitorare** ad finem assequendum. Repraesentant **\"quomodo\" discendi**, sinentes discipulum strategicum esse et ad fines suos assequendos directum.\n\nNeuroscientia demonstravit cerebrum **plasticitatem et dynamismum** possidere, quod significat experientiam et interventionem educativam haec retia per tempus formare. Ideo, DUD hoc paradigma retium neuronalium ut axes ad principia et directiones suas ordinandas utitur, quaerens barriera curricularia eliminare et **multiplices formas repraesentationis, actionis et expressionis, atque implicationis** offerre quae has functiones cerebrales in omnibus discipulis activent."
+        }
       },
       "principle": {
         "es": "Principio",
@@ -79,7 +57,64 @@
         "es": "Principios",
         "en": "Principles",
         "eu": "Printzipioak",
-        "la": "Principia"
+        "la": "Principia",
+        "total": 3,
+        "definition": {
+          "es": "Los principios constituyen el primer nivel de organización del DUA y actúan como ejes para guiar la práctica docente, basándose en las tres redes neuronales. Se desglosan en pautas y consideraciones con el objetivo de fomentar el empoderamiento y la agencia del alumno.",
+          "en": "Principles constitute the first level of organization of UDL and act as axes to guide teaching practice, based on the three neural networks. They are broken down into guidelines and considerations with the aim of fostering learner empowerment and agency.",
+          "eu": "Printzipioak IDUren antolakuntzaren lehen maila dira eta irakaskuntza-jardunbidea bideratzeko ardatz gisa jokatzen dute, hiru sare neuronaletan oinarrituta. Gidalerroetan eta kontuan hartzeetan banatzen dira, ikaslearen ahalduntzea eta agentzia sustatzeko helburuarekin.",
+          "la": "Principia primum gradum organizationis DUD constituunt et ut axes ad praxim docendi dirigendam agunt, in tribus retibus neuronalibus fundata. In directiones et considerationes dividuntur ad potestatem et agentiam discipuli fovendam."
+        }
+      },
+      "guideline": {
+        "es": "Pauta",
+        "en": "Guideline",
+        "eu": "Gidalerro",
+        "la": "Directio"
+      },
+      "guidelines": {
+        "es": "Pautas",
+        "en": "Guidelines",
+        "eu": "Gidalerroak",
+        "la": "Directiones",
+        "total": 9,
+        "definition": {
+          "es": "Las pautas son el segundo nivel de organización del DUA, situándose entre los principios y las consideraciones. Son estrategias concretas basadas en neurociencia para asegurar el acceso y participación en el aprendizaje. Se organizan horizontalmente en Acceso, Apoyo y Funciones Ejecutivas para guiar hacia la autonomía.",
+          "en": "Guidelines are the second level of organization of UDL, situated between principles and considerations. They are concrete strategies based on neuroscience to ensure access and participation in learning. They are organized horizontally into Access, Build, and Internalize to guide towards autonomy.",
+          "eu": "Gidalerroak IDUren antolakuntzaren bigarren maila dira, printzipioen eta kontuan hartzeen artean. Neurozientzian oinarritutako estrategia zehatzak dira, ikaskuntzan sarbidea eta parte-hartzea bermatzeko. Horizontalki Sarbidea, Eraikuntza eta Barneratzea mailetan antolatzen dira, autonomiarantz gidatzeko.",
+          "la": "Directiones sunt secundus gradus organizationis DUD, inter principia et considerationes sitae. Strategiae concretae sunt in neuroscientia fundatae ad accessum et participationem in discendo praestandam. Horizontaliter in Accessum, Aedificationem et Internalizationem ordinantur ad autonomiam dirigendam."
+        }
+      },
+      "consideration": {
+        "es": "Consideración",
+        "en": "Consideration",
+        "eu": "Kontuan hartzea",
+        "la": "Consideratio"
+      },
+      "considerations": {
+        "es": "Consideraciones",
+        "en": "Considerations",
+        "eu": "Kontuan hartzeak",
+        "la": "Considerationes",
+        "total": 36,
+        "definition": {
+          "es": "Las consideraciones son el tercer nivel de concreción del modelo. Sirven para eliminar barreras y ofrecen opciones flexibles que los docentes pueden adaptar. No son una lista rígida, sino andamiajes para el aprendizaje, orientados a fomentar la agencia del estudiante.",
+          "en": "Considerations are the third level of logical organization of the model. They serve to eliminate barriers and offer flexible options that teachers can adapt. They are not a rigid checklist, but scaffolds for learning, oriented towards fostering learner agency.",
+          "eu": "Kontuan hartzeak ereduaren zehaztasunaren hirugarren maila dira. Oztopoak ezabatzeko balio dute eta irakasleek egokitu ditzaketen aukera malguak eskaintzen dituzte. Ez dira zerrenda zurrun bat, ikaskuntzarako aldamioak baizik, ikaslearen agentzia sustatzera bideratuak.",
+          "la": "Considerationes sunt tertius gradus concretionis exemplaris. Ad barrieras eliminandas serviunt et optiones flexibiles praebent quas docetes adaptare possunt. Non sunt index rigidus, sed fulcra ad discendum, ad agentiam discipuli fovendam directa."
+        }
+      },
+      "example": {
+        "es": "Ejemplo",
+        "en": "Example",
+        "eu": "Adibidea",
+        "la": "Exemplum"
+      },
+      "examples": {
+        "es": "Ejemplos",
+        "en": "Examples",
+        "eu": "Adibideak",
+        "la": "Exempla"
       }
     },
     "networks": [
@@ -123,7 +158,7 @@
             {
               "id": "guideline-7",
               "code": "7",
-              "color": "#ADDABE",
+              "color": "#078743",
               "preDescription": {
                 "es": "Opciones de diseño para la ",
                 "en": "Design Options for ",
@@ -146,7 +181,7 @@
                 {
                   "id": "7-1",
                   "code": "7.1",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Optimizar la elección y la autonomía.",
                     "en": "Optimize choice and autonomy.",
@@ -157,7 +192,7 @@
                 {
                   "id": "7-2",
                   "code": "7.2",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Optimizar la relevancia, el valor y la autenticidad.",
                     "en": "Optimize relevance, value, and authenticity.",
@@ -168,7 +203,7 @@
                 {
                   "id": "7-3",
                   "code": "7.3",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Promover la alegría y el juego.",
                     "en": "Nurture joy and play.",
@@ -179,7 +214,7 @@
                 {
                   "id": "7-4",
                   "code": "7.4",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Abordar sesgos, amenazas y distracciones.",
                     "en": "Address biases, threats, and distractions.",
@@ -192,7 +227,7 @@
             {
               "id": "guideline-8",
               "code": "8",
-              "color": "#ADDABE",
+              "color": "#078743",
               "preDescription": {
                 "es": "Opciones de diseño para ",
                 "en": "Design Options for ",
@@ -215,7 +250,7 @@
                 {
                   "id": "8-1",
                   "code": "8.1",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Aclarar el significado y el propósito de los objetivos.",
                     "en": "Clarify the meaning and purpose of goals.",
@@ -226,7 +261,7 @@
                 {
                   "id": "8-2",
                   "code": "8.2",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Optimizar los desafíos y el apoyo.",
                     "en": "Optimize challenge and support.",
@@ -237,7 +272,7 @@
                 {
                   "id": "8-3",
                   "code": "8.3",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Fomentar la colaboración, la interdependencia y el aprendizaje colectivo.",
                     "en": "Foster collaboration, interdependence, and collective learning.",
@@ -248,7 +283,7 @@
                 {
                   "id": "8-4",
                   "code": "8.4",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Fomentar la pertenencia y la comunidad.",
                     "en": "Foster belonging and community.",
@@ -259,7 +294,7 @@
                 {
                   "id": "8-5",
                   "code": "8.5",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Ofrecer retroalimentación orientada a la acción.",
                     "en": "Offer action-oriented feedback.",
@@ -272,7 +307,7 @@
             {
               "id": "guideline-9",
               "code": "9",
-              "color": "#ADDABE",
+              "color": "#078743",
               "preDescription": {
                 "es": "Opciones de diseño para la ",
                 "en": "Design Options for ",
@@ -295,7 +330,7 @@
                 {
                   "id": "9-1",
                   "code": "9.1",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Reconocer expectativas, creencias y motivaciones.",
                     "en": "Recognize expectations, beliefs, and motivations.",
@@ -306,7 +341,7 @@
                 {
                   "id": "9-2",
                   "code": "9.2",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Desarrollar la conciencia de uno mismo y de los demás.",
                     "en": "Develop awareness of self and others.",
@@ -317,7 +352,7 @@
                 {
                   "id": "9-3",
                   "code": "9.3",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Promover la reflexión individual y colectiva.",
                     "en": "Promote individual and collective reflection.",
@@ -328,7 +363,7 @@
                 {
                   "id": "9-4",
                   "code": "9.4",
-                  "color": "#ADDABE",
+                  "color": "#078743",
                   "description": {
                     "es": "Fomentar la empatía y las prácticas restaurativas.",
                     "en": "Cultivate empathy and restorative practices.",
@@ -381,7 +416,7 @@
             {
               "id": "guideline-1",
               "code": "1",
-              "color": "#CABFD9",
+              "color": "#6F5094",
               "preDescription": {
                 "es": "Opciones de diseño para la ",
                 "en": "Design Options for ",
@@ -404,7 +439,7 @@
                 {
                   "id": "1-1",
                   "code": "1.1",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Apoyar las oportunidades para personalizar la presentación de la información.",
                     "en": "Support opportunities to customize the display of information.",
@@ -415,7 +450,7 @@
                 {
                   "id": "1-2",
                   "code": "1.2",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Ofrecer múltiples formas de percibir la información.",
                     "en": "Support multiple ways to perceive information.",
@@ -426,7 +461,7 @@
                 {
                   "id": "1-3",
                   "code": "1.3",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Representar una diversidad de perspectivas e identidades de forma auténtica.",
                     "en": "Represent a diversity of perspectives and identities in authentic ways.",
@@ -439,7 +474,7 @@
             {
               "id": "guideline-2",
               "code": "2",
-              "color": "#CABFD9",
+              "color": "#6F5094",
               "preDescription": {
                 "es": "Opciones de diseño para el ",
                 "en": "Design Options for ",
@@ -462,7 +497,7 @@
                 {
                   "id": "2-1",
                   "code": "2.1",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Aclarar el vocabulario, los símbolos y las estructuras lingüísticas.",
                     "en": "Clarify vocabulary, symbols, and language structures.",
@@ -473,7 +508,7 @@
                 {
                   "id": "2-2",
                   "code": "2.2",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Apoyar la decodificación de textos, notaciones matemáticas y símbolos.",
                     "en": "Support decoding of text, mathematical notation, and symbols.",
@@ -484,7 +519,7 @@
                 {
                   "id": "2-3",
                   "code": "2.3",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Promover la comprensión y el respeto entre todos los idiomas y dialectos.",
                     "en": "Cultivate understanding and respect across languages and dialects.",
@@ -495,7 +530,7 @@
                 {
                   "id": "2-4",
                   "code": "2.4",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Abordar los sesgos en el uso del lenguaje y los símbolos.",
                     "en": "Address biases in the use of language and symbols.",
@@ -506,7 +541,7 @@
                 {
                   "id": "2-5",
                   "code": "2.5",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Ilustrar a través de múltiples medios.",
                     "en": "Illustrate through multiple media.",
@@ -519,7 +554,7 @@
             {
               "id": "guideline-3",
               "code": "3",
-              "color": "#CABFD9",
+              "color": "#6F5094",
               "preDescription": {
                 "es": "Opciones de diseño para el ",
                 "en": "Design Options for ",
@@ -542,7 +577,7 @@
                 {
                   "id": "3-1",
                   "code": "3.1",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Conectar los conocimientos previos con el nuevo aprendizaje.",
                     "en": "Connect prior knowledge to new learning.",
@@ -553,7 +588,7 @@
                 {
                   "id": "3-2",
                   "code": "3.2",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Resaltar y explorar patrones, características clave, ideas relevantes y relaciones.",
                     "en": "Highlight patterns, critical features, big ideas, and relationships.",
@@ -564,7 +599,7 @@
                 {
                   "id": "3-3",
                   "code": "3.3",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Fomentar múltiples formas de conocer y construir significado.",
                     "en": "Cultivate multiple ways of knowing and making meaning.",
@@ -575,7 +610,7 @@
                 {
                   "id": "3-4",
                   "code": "3.4",
-                  "color": "#CABFD9",
+                  "color": "#6F5094",
                   "description": {
                     "es": "Maximizar la transferencia y la generalización.",
                     "en": "Maximize transfer and generalization.",
@@ -628,7 +663,7 @@
             {
               "id": "guideline-4",
               "code": "4",
-              "color": "#A8DEF3",
+              "color": "#037DB8",
               "preDescription": {
                 "es": "Opciones de diseño para la ",
                 "en": "Design Options for ",
@@ -651,7 +686,7 @@
                 {
                   "id": "4-1",
                   "code": "4.1",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Diversificar y valorar los métodos de respuesta, orientación y movimiento.",
                     "en": "Vary and honor the methods for response, navigation, and movement.",
@@ -662,7 +697,7 @@
                 {
                   "id": "4-2",
                   "code": "4.2",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Optimizar el acceso a materiales accesibles, tecnologías de apoyo y herramientas accesibles.",
                     "en": "Optimize access to accessible materials and assistive and accessible technologies and tools.",
@@ -675,7 +710,7 @@
             {
               "id": "guideline-5",
               "code": "5",
-              "color": "#A8DEF3",
+              "color": "#037DB8",
               "preDescription": {
                 "es": "Opciones de diseño para la ",
                 "en": "Design Options for ",
@@ -698,7 +733,7 @@
                 {
                   "id": "5-1",
                   "code": "5.1",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Usar múltiples medios para la comunicación.",
                     "en": "Use multiple media for communication.",
@@ -709,7 +744,7 @@
                 {
                   "id": "5-2",
                   "code": "5.2",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Usar múltiples herramientas para la construcción, la composición y la creatividad.",
                     "en": "Use multiple tools for construction, composition, and creativity.",
@@ -720,7 +755,7 @@
                 {
                   "id": "5-3",
                   "code": "5.3",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Desarrollar habilidades con apoyos graduados para la práctica y el desempeño.",
                     "en": "Build fluencies with graduated support for practice and performance.",
@@ -731,7 +766,7 @@
                 {
                   "id": "5-4",
                   "code": "5.4",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Abordar los sesgos relacionados con los modos de expresión y comunicación.",
                     "en": "Address biases related to modes of expression and communication.",
@@ -744,7 +779,7 @@
             {
               "id": "guideline-6",
               "code": "6",
-              "color": "#A8DEF3",
+              "color": "#037DB8",
               "preDescription": {
                 "es": "Opciones de diseño para el ",
                 "en": "Design Options for ",
@@ -767,7 +802,7 @@
                 {
                   "id": "6-1",
                   "code": "6.1",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Establecer objetivos significativos.",
                     "en": "Set meaningful goals.",
@@ -778,7 +813,7 @@
                 {
                   "id": "6-2",
                   "code": "6.2",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Anticipar y planificar los desafíos.",
                     "en": "Anticipate and plan for challenges.",
@@ -789,7 +824,7 @@
                 {
                   "id": "6-3",
                   "code": "6.3",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Organizar la información y los recursos.",
                     "en": "Organize information and resources.",
@@ -800,7 +835,7 @@
                 {
                   "id": "6-4",
                   "code": "6.4",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Mejorar la capacidad para supervisar el progreso.",
                     "en": "Enhance capacity for monitoring progress.",
@@ -811,7 +846,7 @@
                 {
                   "id": "6-5",
                   "code": "6.5",
-                  "color": "#A8DEF3",
+                  "color": "#037DB8",
                   "description": {
                     "es": "Cuestionar las prácticas excluyentes.",
                     "en": "Challenge exclusionary practices.",

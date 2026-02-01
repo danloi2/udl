@@ -26,7 +26,7 @@
         <div class="flex items-center gap-3">
           <h1 class="text-xl font-black text-gray-900">{$ui.appTitle}</h1>
           <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full border border-blue-200">
-            {$ui.versionLabel}
+            {t($udlData.version, $language)}
           </span>
         </div>
         <LanguageSwitcher />

@@ -8,7 +8,7 @@ import type {
   Guideline,
   Consideration,
 } from '../types';
-import udlJson from '../data/udl.json';
+import udlJson from '../data/udl-core.json';
 
 // Load and parse UDL data
 const rawData = udlJson as UDLRoot;

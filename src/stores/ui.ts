@@ -17,7 +17,7 @@ export const ui = derived([language, udlData], ([$language, $udlData]) => {
     exploreGuidelines: uiTranslations.navigation.exploreGuidelines[$language],
 
     // Version
-    versionLabel: uiTranslations.labels.versionLabel[$language],
+    // Version - now retrieved directly from udlData.version where needed
 
     // Buttons
     clearFilters: uiTranslations.buttons.clearFilters[$language],
@@ -63,5 +63,14 @@ export const ui = derived([language, udlData], ([$language, $udlData]) => {
     showAction: uiTranslations.labels.showAction[$language],
     hideAction: uiTranslations.labels.hideAction[$language],
     modelAction: uiTranslations.labels.modelAction[$language],
+
+    // Examples
+    examples: uiTranslations.labels.examples[$language],
+    allExamples: uiTranslations.labels.allExamples[$language],
+    educationalLevel: uiTranslations.labels.educationalLevel[$language],
+    curricularArea: uiTranslations.labels.curricularArea[$language],
+    webTools: uiTranslations.labels.webTools[$language],
+    allEducationalLevels: uiTranslations.labels.allEducationalLevels[$language],
+    allCurricularAreas: uiTranslations.labels.allCurricularAreas[$language],
   };
 });

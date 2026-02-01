@@ -10,7 +10,7 @@
   import LevelBadge from '../components/model/LevelBadge.svelte';
   import { ArrowLeft, LayoutGrid, Search } from 'lucide-svelte';
   import { getGuidelineStyles, getColorStyles } from '../utils/colors';
-  import type { Language } from '../types';
+  import type { Language, Consideration, Guideline, Principle } from '../types';
 
   // Brain assets
   import affectiveLogo from '../assets/brains/affective_logo.svg';
@@ -49,9 +49,9 @@
     return null;
   })();
 
-  $: consideration = itemData?.type === 'consideration' ? itemData.item : null;
-  $: guideline = itemData?.guideline;
-  $: principle = itemData?.principle;
+  $: consideration = itemData?.type === 'consideration' ? (itemData.item as Consideration) : null;
+  $: guideline = itemData?.guideline as Guideline | null;
+  $: principle = itemData?.principle as Principle | null;
   
   $: networkId = principle ? $udlData.networks.find(n => n.principle.id === principle.id)?.id : undefined;
   $: logo = networkId ? brainLogos[networkId as keyof typeof brainLogos] : undefined;
@@ -63,7 +63,7 @@
     ...(principle ? [{ label: t(principle.name, currentLang), href: `/detail/${principle.id}` }] : []),
     ...(guideline && itemData?.type !== 'guideline' ? [{ label: `${guideline.code}. ${t(guideline.name, currentLang)}`, href: `/detail/${guideline.id}` }] : []),
     ...(itemData?.type === 'guideline' && guideline ? [{ label: `${guideline.code}. ${t(guideline.name, currentLang)}` }] : []),
-    ...(itemData?.type === 'consideration' && itemData.item ? [{ label: `${itemData.item.code}. ${t((itemData.item as any).description, currentLang)}` }] : []),
+    ...(itemData?.type === 'consideration' && itemData.item ? [{ label: `${(itemData.item as any).code}. ${t((itemData.item as any).description, currentLang)}` }] : []),
   ];
 
   // Fix scroll position when navigating between items
@@ -250,10 +250,85 @@
           {/if}
 
           <!-- Description (if enhanced with markdown in future) -->
-          {#if itemData.type === 'consideration' && consideration}
+          {#if itemData.type === 'consideration' && consideration && 'description' in consideration}
             <div class="prose prose-lg max-w-none pt-4 border-t border-gray-100">
               <MarkdownRenderer content={t(consideration.description, currentLang)} />
             </div>
+          {/if}
+
+          <!-- Examples Section -->
+          {#if guideline}
+            {@const guidelineNum = guideline.code}
+            {#await import(`../data/udl-guideline-${guidelineNum}.json`) then examplesData}
+              {@const relevantExamples = itemData.type === 'consideration' 
+                ? (examplesData.default.considerations.find((c: any) => c.considerationId === consideration?.id)?.examples || [])
+                : examplesData.default.considerations.flatMap((c: any) => c.examples)}
+              
+              {#if relevantExamples.length > 0}
+                <div class="pt-8 border-t border-gray-100">
+                  <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-black text-gray-900 flex items-center gap-3">
+                      <span class="w-2 h-8 rounded-full" style="background-color: {principle?.color}"></span>
+                      {$ui.examples}
+                    </h2>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-bold rounded-full">
+                      {relevantExamples.length} {relevantExamples.length === 1 ? $ui.result : $ui.results}
+                    </span>
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-6">
+                    {#each relevantExamples as example}
+                      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="px-6 py-4 bg-gray-50/50 border-b border-gray-100 flex flex-wrap gap-2 items-center justify-between">
+                          <div class="flex items-center gap-3">
+                            <span class="font-mono text-sm font-black" style="color: {example.color}">
+                              {example.code}
+                            </span>
+                            <div class="flex gap-2">
+                               <span class="px-2 py-1 bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-wider rounded-md border border-blue-100">
+                                {t(example.educationalLevel, currentLang)}
+                              </span>
+                              <span class="px-2 py-1 bg-purple-50 text-purple-700 text-[10px] font-black uppercase tracking-wider rounded-md border border-purple-100">
+                                {t(example.curricularArea, currentLang)}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="p-6">
+                          <div class="text-gray-700 leading-relaxed font-medium mb-6">
+                            <div class="mb-2">
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Actividad:</span>
+                                {t(example.activity, currentLang)}
+                            </div>
+                            <div>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Opciones de Diseño:</span>
+                                {t(example.designOptions, currentLang)}
+                            </div>
+                          </div>
+                          
+                          {#if example.webTools && example.webTools.length > 0}
+                            <div class="flex flex-col gap-3">
+                              <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400">{$ui.webTools}</h4>
+                              <div class="flex flex-wrap gap-3">
+                                {#each example.webTools as tool}
+                                  <a href={tool.url} target="_blank" rel="noopener noreferrer" 
+                                     class="flex items-center gap-3 px-3 py-2 bg-white border border-gray-100 rounded-xl hover:border-blue-400 hover:shadow-sm transition-all group">
+                                    <div class="w-8 h-8 rounded-lg overflow-hidden bg-gray-50 p-1 border border-gray-100">
+                                      <img src={tool.logo} alt={tool.name} class="w-full h-full object-contain" />
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-blue-600">{tool.name}</span>
+                                  </a>
+                                {/each}
+                              </div>
+                            </div>
+                          {/if}
+                        </div>
+                      </div>
+                    {/each}
+                  </div>
+                </div>
+              {/if}
+            {/await}
           {/if}
         </div>
       </div>

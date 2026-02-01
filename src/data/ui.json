@@ -47,16 +47,10 @@
       "la": "Filtri"
     },
     "appTitle": {
-      "es": "Diseño Universal para el Aprendizaje (UDL)",
+      "es": "Diseño Universal para el Aprendizaje (DUA)",
       "en": "Universal Design for Learning (UDL)",
-      "eu": "Ikaskuntzarako Diseinu Unibertsala (UDL)",
-      "la": "Designatio Universalis pro Discendo (UDL)"
-    },
-    "versionLabel": {
-      "es": "Versión 3",
-      "en": "Version 3",
-      "eu": "3. bertsioa",
-      "la": "Versio III"
+      "eu": "Ikaskuntzarako Diseinu Unibertsala (IDU)",
+      "la": "Designatio Universalis pro Discendo (DUD)"
     },
     "allPrinciples": {
       "es": "Todos los principios",
@@ -75,6 +69,48 @@
       "en": "All considerations",
       "eu": "Kontuan hartze guztiak",
       "la": "Omnes considerationes"
+    },
+    "allExamples": {
+      "es": "Todos los ejemplos",
+      "en": "All examples",
+      "eu": "Adibide guztiak",
+      "la": "Omnia exempla"
+    },
+    "examples": {
+      "es": "Ejemplos",
+      "en": "Examples",
+      "eu": "Adibideak",
+      "la": "Exempla"
+    },
+    "educationalLevel": {
+      "es": "Nivel educativo",
+      "en": "Educational level",
+      "eu": "Hezkuntza maila",
+      "la": "Gradus educativus"
+    },
+    "curricularArea": {
+      "es": "Área curricular",
+      "en": "Curricular area",
+      "eu": "Arlo kurrikularra",
+      "la": "Area curricularis"
+    },
+    "webTools": {
+      "es": "Herramientas web",
+      "en": "Web tools",
+      "eu": "Web tresnak",
+      "la": "Instrumenta retis"
+    },
+    "allEducationalLevels": {
+      "es": "Todos los niveles",
+      "en": "All levels",
+      "eu": "Maila guztiak",
+      "la": "Omnes gradus"
+    },
+    "allCurricularAreas": {
+      "es": "Todas las áreas",
+      "en": "All areas",
+      "eu": "Arlo guztiak",
+      "la": "Omnes areae"
     },
     "allTypes": {
       "es": "Todos los tipos",
