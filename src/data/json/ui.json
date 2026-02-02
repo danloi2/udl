@@ -233,6 +233,12 @@
       "en": "Action & Expression: The \"how\" of learning",
       "eu": "Ekintza eta Adierazpena: Ikaskuntzaren \"nola\"",
       "la": "Actio et Expressio: \"Quomodo\" discendi"
+    },
+    "readyToTeach": {
+      "es": "¿Estás listo para enseñar para todos?",
+      "en": "Are you ready to teach for everyone?",
+      "eu": "Jende guztiarentzat irakasteko prest al zaude?",
+      "la": "Esne paratus ad docendum pro omnibus"
     }
   },
   "messages": {

@@ -1,10 +1,10 @@
 // Type definitions for UDL data structure
 
 export interface MultilingualText {
-  es: string;
-  en: string;
-  eu: string;
-  la: string;
+  es: string | string[];
+  en: string | string[];
+  eu: string | string[];
+  la: string | string[];
 }
 
 export type Language = 'es' | 'en' | 'eu' | 'la';
@@ -68,18 +68,22 @@ export interface UDLIndex {
   guidelines: Map<string, Guideline>;
   considerations: Map<string, Consideration>;
   examples: Map<string, Example>;
+  activities: Map<string, Activity>;
 }
 
 // Search result types
 export interface SearchResult {
   id: string;
   code: string;
-  type: 'principle' | 'guideline' | 'consideration';
+  type: 'principle' | 'guideline' | 'consideration' | 'example' | 'activity';
   principleId: string;
   guidelineId?: string;
-  item: Principle | Guideline | Consideration;
+  considerationId?: string;
+  item: Principle | Guideline | Consideration | Example | Activity;
   principleName?: MultilingualText;
   guidelineName?: MultilingualText;
+  educationalLevel?: MultilingualText;
+  curricularArea?: MultilingualText;
 }
 
 // Example types
@@ -87,6 +91,15 @@ export interface WebTool {
   name: string;
   url: string;
   logo: string;
+}
+
+export interface Activity {
+  id: string; // "01_PRI_MAT"
+  code: string; // "01-PRI-MAT"
+  gradeLevel: MultilingualText; // Full name (resolvable)
+  subject: MultilingualText; // Full name (resolvable)
+  title: MultilingualText;
+  duaAdaptations: Record<string, MultilingualText>; // Keyed by consideration code (e.g. "7.1")
 }
 
 export interface Example {

@@ -14,6 +14,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- Model Header Font Control (Web/Screen) --- */
+.app-model-title {
+  font-size: 1.875rem; /* Equivalent to text-3xl */
+}
+
+@media (min-width: 768px) {
+  .app-model-title {
+    font-size: 2.25rem; /* Equivalent to text-4xl */
+  }
+}
+
+.app-model-version {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+}
+
+.app-model-cast {
+  font-size: 0.75rem; /* Equivalent to text-xs */
+}
+/* ---------------------------------------------- */
+
 * {
   box-sizing: border-box;
 }
@@ -26,6 +46,240 @@ body {
 
 #app {
   min-height: 100vh;
+}
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  @page landscape-page {
+    size: A4 landscape;
+    margin: 3mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Named page for the full model */
+  .print-landscape {
+    page: landscape-page;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 204mm !important; /* Forces vertical centering inside A4 landscape */
+    width: 291mm !important;
+    margin: 0 auto !important;
+  }
+
+  /* Hide headers, interactive elements, and PDF buttons */
+  .fixed,
+  header,
+  .sticky,
+  button:not(.no-print-hide),
+  .no-print,
+  #language-switcher-header,
+  .floating-nav {
+    display: none !important;
+  }
+
+  /* Force 3-column model to fit and center - Unified Scale */
+  .print-model-container {
+    transform: scale(0.98) !important;
+    transform-origin: top center;
+  }
+
+  .print-model-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-header-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+    text-align: center !important;
+  }
+
+  .app-model-title {
+    font-size: 21pt !important;
+  }
+
+  .app-model-version,
+  .app-model-cast {
+    font-size: 12pt !important;
+  }
+
+  /* Shrink components radically for print model */
+  .print-model-container > h1 {
+    display: none !important;
+  }
+  .print-model-container .text-center.mb-8 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Principle Header Compactness (Landscape Model) */
+  .print-model-container .px-4.py-6.md\:py-10 {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+  }
+
+  /* Logo Size in Print Model */
+  .print-model-container .w-12.h-12,
+  .print-model-container .md\:w-20.md\:h-20 {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+
+  /* Guideline Card Compactness (Landscape Model) */
+  .print-model-container .px-5.py-4 {
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+
+  /* Increase Guideline Name Font Size */
+  .print-model-container h3 span:not(.pre-description-text) {
+    font-size: 14pt !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Shrink Pre-descriptions (Guideline and Principle) */
+  .print-model-container .pre-description-text {
+    font-size: 10pt !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1 !important;
+  }
+
+  /* Increase Principle Names */
+  .print-model-container h2 {
+    font-size: 18pt !important;
+    margin-top: 0.1rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+
+  /* Considerations Compression (Landscape Model) */
+  .print-model-container .p-3.space-y-1 {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.1rem !important;
+    gap: 0.05rem !important;
+  }
+
+  .print-model-container .p-3.space-y-1 a {
+    padding-top: 0.05rem !important;
+    padding-bottom: 0.05rem !important;
+    padding-left: 0.25rem !important;
+    border-left-width: 2px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .print-model-container .p-3.space-y-1 .text-sm {
+    font-size: 11pt !important;
+    line-height: 1.05 !important;
+  }
+
+  .print-model-container .gap-2 {
+    gap: 0.2rem !important;
+  }
+
+  /* Portrait Detail Views (Principles, Guidelines, Considerations) */
+  .print-portrait-compact {
+    page-break-inside: auto !important; /* Allow multi-page for long content (many examples) */
+    transform: none !important; /* Scaling on containers breaks page break calculations */
+  }
+
+  .print-multi-page {
+    page-break-inside: auto !important;
+    transform: none !important;
+  }
+
+  /* Specific rules to prevent orphaned headers and split cards */
+  .print-break-after-avoid {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .print-multi-page .bg-white.rounded-2xl,
+  .print-portrait-compact .bg-white.rounded-2xl {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Tighten paddings for Detail views in print */
+  .print-portrait-compact .px-8.py-8,
+  .print-multi-page .px-8.py-8 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Hide LevelBadge in print to save space */
+  .mt-4.flex.justify-end,
+  .mt-2.flex.justify-end {
+    display: none !important;
+  }
+
+  /* Remove all shadows for cleaner PDF */
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* Ensure content flows properly */
+  .min-h-screen {
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Hide navigation elements */
+  .pb-24 {
+    padding-bottom: 0 !important;
+  }
+
+  /* Preserve specific background colors */
+  [style*='background-color'],
+  [style*='border-color'],
+  .border-b-4,
+  .border-b-2 {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* Adjust typography for print density */
+  p,
+  h1,
+  h2,
+  h3 {
+    page-break-inside: avoid;
+  }
+
+  /* Hide Mobile view specifically in print */
+  .lg\:hidden {
+    display: none !important;
+  }
 }
 
 /* Smooth transitions */

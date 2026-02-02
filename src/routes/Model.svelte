@@ -7,7 +7,17 @@
   import GuidelineCard from '../components/model/GuidelineCard.svelte';
   import { ArrowLeft, Eye, EyeOff } from 'lucide-svelte';
   import { link } from 'svelte-spa-router';
+  import FloatingNavigation from '../components/FloatingNavigation.svelte';
+  import Breadcrumbs from '../components/Breadcrumbs.svelte';
+  import { Home, LayoutGrid } from 'lucide-svelte';
   import { showConsiderations } from '../stores/settings';
+
+
+  // Breadcrumbs
+  $: breadcrumbItems = [
+    { label: '', href: '/', icon: Home },
+    { label: $ui.modelAction, icon: LayoutGrid }
+  ];
 </script>
 
 <div class="min-h-screen bg-gray-50 pb-20">
@@ -15,19 +25,8 @@
   <div class="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
     <div class="container mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
-        <a
-          href="/"
-          use:link
-          class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-        >
-          <ArrowLeft class="w-5 h-5" />
-          <span>{$ui.home}</span>
-        </a>
-        <div class="flex items-center gap-3">
-          <h1 class="text-xl font-black text-gray-900">{$ui.appTitle}</h1>
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full border border-blue-200">
-            {t($udlData.version, $language)}
-          </span>
+        <div class="flex-1 min-w-0 mr-4">
+           <Breadcrumbs items={breadcrumbItems} />
         </div>
         <LanguageSwitcher />
       </div>
@@ -35,9 +34,33 @@
   </div>
 
   <!-- 3x3 Grid Layout -->
-  <div class="container mx-auto px-4 pt-10">
+  <div class="container mx-auto px-4 print-model-container print-landscape {$showConsiderations ? 'show-cons' : 'hide-cons'}">
+    <!-- Page Header (Title & Meta) -->
+    <div class="text-center mb-8 print-header-container">
+       <div class="flex items-center justify-center gap-4 flex-wrap">
+         <h1 class="font-black text-gray-900 tracking-tight app-model-title">
+           {t($udlData.terminology.principle.title, $language) || $ui.appTitle}
+         </h1>
+         
+         <div class="flex items-center gap-2 app-model-meta">
+           <span class="px-3 py-1 bg-blue-50 text-blue-700 font-black rounded-full border border-blue-100 uppercase tracking-wide print:bg-transparent print:border-none app-model-version">
+             {t($udlData.version, $language)}
+           </span>
+           
+           <a 
+              href="https://udlguidelines.cast.org/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 px-4 py-1.5 bg-gray-900 text-white rounded-full hover:bg-gray-700 hover:scale-105 transition-all shadow-md group"
+            >
+              <span class="font-black uppercase tracking-widest whitespace-nowrap app-model-cast">CAST (2024)</span>
+            </a>
+         </div>
+       </div>
+    </div>
     <!-- Desktop Grid (3x3 Principles + Guidelines) -->
-    <div class="hidden lg:grid grid-cols-3 gap-x-12 gap-y-8 items-stretch">
+    <!-- Row-based grid for desktop screen view -->
+    <div class="hidden lg:grid grid-cols-3 gap-x-12 gap-y-8 items-stretch print:hidden">
       <!-- Headers Row -->
       {#each $udlData.networks as network}
         <div class="rounded-xl overflow-hidden shadow-lg border-b-4 h-full" style="border-color: {network.principle.color}">
@@ -60,6 +83,25 @@
       {/each}
     </div>
 
+    <!-- Print Optimized Layout (Column-based for maximum vertical density) -->
+    <div class="hidden print:grid grid-cols-3 gap-2 items-start">
+      {#each $udlData.networks as network}
+        <div class="flex flex-col gap-2">
+          <!-- Header -->
+          <div class="rounded-lg overflow-hidden border-b-2" style="border-color: {network.principle.color}">
+            <PrincipleHeader {network} currentLang={$language} />
+          </div>
+          <!-- Guidelines Stack -->
+          {#each network.principle.guidelines as guideline}
+            <GuidelineCard 
+              {guideline} 
+              principleColor={network.principle.color} 
+            />
+          {/each}
+        </div>
+      {/each}
+    </div>
+
     <!-- Mobile Vertical View -->
     <div class="lg:hidden flex flex-col gap-12">
       {#each $udlData.networks as network}
@@ -77,25 +119,5 @@
     </div>
   </div>
 
-  <!-- Floating Action Button (FAB) -->
-  <div class="fixed bottom-8 right-8 z-50">
-    <button
-      on:click={() => showConsiderations.update(v => !v)}
-      class="group relative flex flex-col items-center justify-center w-16 h-16 bg-blue-600 text-white rounded-2xl shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300"
-      title={$showConsiderations ? $ui.hideConsiderations : $ui.showConsiderations}
-    >
-      <!-- Tooltip -->
-      <span class="absolute right-full mr-4 px-3 py-1.5 bg-gray-900/80 backdrop-blur text-white text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-        {$showConsiderations ? $ui.hideConsiderations : $ui.showConsiderations}
-      </span>
-
-      {#if $showConsiderations}
-        <EyeOff class="w-6 h-6 mb-1" />
-        <span class="text-[10px] font-black uppercase tracking-widest">{$ui.hideAction}</span>
-      {:else}
-        <Eye class="w-6 h-6 mb-1" />
-        <span class="text-[10px] font-black uppercase tracking-widest">{$ui.showAction}</span>
-      {/if}
-    </button>
-  </div>
+  <FloatingNavigation currentPage="model" />
 </div>

@@ -1,18 +1,13 @@
 import { writable, derived } from 'svelte/store';
 import Fuse from 'fuse.js';
-import { udlData } from './udlData';
+import {
+  udlData,
+  udlIndex,
+  getConsiderationForExample,
+  getGuidelineForConsideration,
+  getPrincipleForGuideline,
+} from './udlData';
 import { language } from './language';
-import g1 from '../data/udl-guideline-1.json';
-import g2 from '../data/udl-guideline-2.json';
-import g3 from '../data/udl-guideline-3.json';
-import g4 from '../data/udl-guideline-4.json';
-import g5 from '../data/udl-guideline-5.json';
-import g6 from '../data/udl-guideline-6.json';
-import g7 from '../data/udl-guideline-7.json';
-import g8 from '../data/udl-guideline-8.json';
-import g9 from '../data/udl-guideline-9.json';
-
-const allExamplesData = [g1, g2, g3, g4, g5, g6, g7, g8, g9];
 
 // Search state
 export const searchQuery = writable<string>('');
@@ -21,88 +16,117 @@ export const selectedGuideline = writable<string>('all');
 export const selectedConsideration = writable<string>('all');
 export const selectedEducationalLevel = writable<string>('all');
 export const selectedCurricularArea = writable<string>('all');
-export const selectedType = writable<'all' | 'guideline' | 'consideration' | 'example'>('all');
+export const selectedType = writable<
+  'all' | 'guideline' | 'consideration' | 'example' | 'activity'
+>('all');
 
 // Build searchable items
-export const searchableItems = derived([udlData, language], ([$udlData, $language]) => {
-  const items: any[] = [];
-  const considerationToPrinciple = new Map<string, string>();
-  const considerationToGuideline = new Map<string, string>();
+export const searchableItems = derived(
+  [udlData, udlIndex, language],
+  ([$udlData, $udlIndex, $language]) => {
+    const items: any[] = [];
 
-  $udlData.networks.forEach((network) => {
-    const principle = network.principle;
-    // Add principle
-    items.push({
-      id: principle.id,
-      code: '',
-      type: 'principle',
-      principleId: principle.id,
-      item: principle,
-    });
-
-    principle.guidelines.forEach((guideline) => {
-      // Add guideline
+    $udlData.networks.forEach((network) => {
+      const principle = network.principle;
+      // Add principle
       items.push({
-        id: guideline.id,
-        code: guideline.code,
-        type: 'guideline',
+        id: principle.id,
+        code: '',
+        type: 'principle',
         principleId: principle.id,
-        guidelineId: guideline.id,
-        item: guideline,
-        principleName: principle.name,
+        item: principle,
       });
 
-      guideline.considerations.forEach((consideration) => {
-        // Add consideration
+      principle.guidelines.forEach((guideline) => {
+        // Add guideline
         items.push({
-          id: consideration.id,
-          code: consideration.code,
-          type: 'consideration',
+          id: guideline.id,
+          code: guideline.code,
+          type: 'guideline',
           principleId: principle.id,
           guidelineId: guideline.id,
-          item: consideration,
+          item: guideline,
           principleName: principle.name,
-          guidelineName: guideline.name,
         });
 
-        // Map consideration to principle and guideline
-        considerationToPrinciple.set(consideration.id, principle.id);
-        considerationToGuideline.set(consideration.id, guideline.id);
+        guideline.considerations.forEach((consideration) => {
+          // Add consideration
+          items.push({
+            id: consideration.id,
+            code: consideration.code,
+            type: 'consideration',
+            principleId: principle.id,
+            guidelineId: guideline.id,
+            item: consideration,
+            principleName: principle.name,
+            guidelineName: guideline.name,
+          });
+        });
       });
     });
-  });
 
-  // Add Examples
-  allExamplesData.forEach((gFile: any) => {
-    gFile.considerations.forEach((cGroup: any) => {
-      cGroup.examples.forEach((example: any) => {
+    // Add Examples from Index
+    $udlIndex.examples.forEach((example) => {
+      const consideration = getConsiderationForExample(example.id, $udlIndex);
+      const considerationId = consideration ? consideration.id : '';
+      let guidelineId = undefined;
+      let principleId = undefined;
+
+      if (considerationId) {
+        const guideline = getGuidelineForConsideration(considerationId, $udlData);
+        if (guideline) {
+          guidelineId = guideline.id;
+          const principle = getPrincipleForGuideline(guideline.id, $udlData);
+          if (principle) principleId = principle.id;
+        }
+      }
+
+      items.push({
+        id: example.id,
+        code: example.code,
+        type: 'example',
+        considerationId: considerationId,
+        guidelineId: guidelineId,
+        principleId: principleId,
+        item: example,
+        educationalLevel: example.educationalLevel,
+        curricularArea: example.curricularArea,
+      });
+    });
+
+    // Add Full Activities
+    // We only want unique activities (dedupe by ID if we indexed by both ID and Code)
+    const uniqueActivities = new Set();
+    $udlIndex.activities.forEach((activity) => {
+      if (!uniqueActivities.has(activity.id)) {
+        uniqueActivities.add(activity.id);
+        // Activities don't belong to a specific principle/guideline, so they are top-level or searchable by text
         items.push({
-          id: example.id,
-          code: example.code,
-          type: 'example',
-          considerationId: cGroup.considerationId,
-          guidelineId: considerationToGuideline.get(cGroup.considerationId),
-          principleId: considerationToPrinciple.get(cGroup.considerationId),
-          item: example,
-          educationalLevel: example.educationalLevel,
-          curricularArea: example.curricularArea,
+          id: activity.code, // Use code as ID for URL consistency (e.g. 01-PRI-MAT)
+          code: activity.code,
+          type: 'activity',
+          item: activity,
+          // meta for filters
+          educationalLevel: activity.gradeLevel,
+          curricularArea: activity.subject,
         });
-      });
+      }
     });
-  });
 
-  return items;
-});
+    return items;
+  }
+);
 
 // Fuse.js instance for fuzzy search
 export const fuse = derived([searchableItems, language], ([$searchableItems, $language]) => {
   return new Fuse($searchableItems, {
     keys: [
       { name: 'code', weight: 5 },
-      { name: 'id', weight: 5 },
+      { name: 'id', weight: 4 },
       { name: `item.name.${$language}`, weight: 2 },
       { name: `item.description.${$language}`, weight: 1.5 },
-      { name: `item.activity.${$language}`, weight: 2 },
+      { name: `item.activity.${$language}`, weight: 2 }, // search examples
+      { name: `item.title.${$language}`, weight: 3 }, // search activities
       { name: `item.designOptions.${$language}`, weight: 1.5 },
       { name: `item.educationalLevel.${$language}`, weight: 1 },
       { name: `item.curricularArea.${$language}`, weight: 1 },
@@ -154,9 +178,11 @@ export const availableConsiderations = derived(
 export const availableEducationalLevels = derived([searchableItems], ([$searchableItems]) => {
   const levels = new Map();
   $searchableItems
-    .filter((item) => item.type === 'example')
+    .filter((item) => item.type === 'example' || item.type === 'activity')
     .forEach((item: any) => {
-      levels.set(item.educationalLevel.es, item.educationalLevel);
+      // Assuming multilingual, check ES presence or fallback
+      const levelName = item.educationalLevel?.es || 'Unknown';
+      levels.set(levelName, item.educationalLevel);
     });
   return Array.from(levels.values());
 });
@@ -165,9 +191,10 @@ export const availableEducationalLevels = derived([searchableItems], ([$searchab
 export const availableCurricularAreas = derived([searchableItems], ([$searchableItems]) => {
   const areas = new Map();
   $searchableItems
-    .filter((item) => item.type === 'example')
+    .filter((item) => item.type === 'example' || item.type === 'activity')
     .forEach((item: any) => {
-      areas.set(item.curricularArea.es, item.curricularArea);
+      const areaName = item.curricularArea?.es || 'Unknown';
+      areas.set(areaName, item.curricularArea);
     });
   return Array.from(areas.values());
 });
@@ -225,20 +252,55 @@ export const searchResults = derived(
     // Apply educational level filter
     if ($selectedEducationalLevel !== 'all') {
       results = results.filter(
-        (item) => item.type === 'example' && item.educationalLevel?.es === $selectedEducationalLevel
+        (item) =>
+          (item.type === 'example' || item.type === 'activity') &&
+          item.educationalLevel?.es === $selectedEducationalLevel
       );
     }
 
     // Apply curricular area filter
     if ($selectedCurricularArea !== 'all') {
       results = results.filter(
-        (item) => item.type === 'example' && item.curricularArea?.es === $selectedCurricularArea
+        (item) =>
+          (item.type === 'example' || item.type === 'activity') &&
+          item.curricularArea?.es === $selectedCurricularArea
       );
     }
 
     // Apply type filter
     if ($selectedType !== 'all') {
       results = results.filter((item) => item.type === $selectedType);
+    }
+
+    // Secondary sort: prioritize 'activity' type above 'example' for similar scores
+    // And ensure principles > guidelines > considerations > activities > examples for general navigation
+    const typeOrder: Record<string, number> = {
+      principle: 1,
+      guideline: 2,
+      consideration: 3,
+      activity: 4,
+      example: 5,
+    };
+
+    // Apply search query
+    if ($searchQuery.trim()) {
+      const fuseResults = $fuse.search($searchQuery);
+      // Keep Fuse.js score but use type as tie-breaker
+      results = fuseResults
+        .sort((a, b) => {
+          if (Math.abs(a.score! - b.score!) < 0.001) {
+            return (
+              (typeOrder[a.item.type as string] || 99) - (typeOrder[b.item.type as string] || 99)
+            );
+          }
+          return a.score! - b.score!;
+        })
+        .map((result) => result.item);
+    } else {
+      // Default sort when no query
+      results = [...results].sort((a, b) => {
+        return (typeOrder[a.type as string] || 99) - (typeOrder[b.type as string] || 99);
+      });
     }
 
     return results;

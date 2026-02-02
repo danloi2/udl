@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "principle": "representation",
+    "es": "¿Tus alumnos tienen dificultades por sus capacidades o por cómo has diseñado el currículo?",
+    "en": "Do your students have difficulties because of their abilities or because of how you designed the curriculum?",
+    "eu": "Zure ikasleek zailtasunak dituzte beren gaitasunengatik ala zuk curriculuma diseinatu duzun moduagatik?",
+    "la": "Habentne discipuli tui difficultates propter suas facultates an propter modum quo tu curriculum designavisti?"
+  },
+  {
+    "id": 2,
+    "principle": "representation",
+    "es": "¿Tus materiales digitales permiten personalizar tamaño, color y contraste?",
+    "en": "Do your digital materials allow for personalizing size, color, and contrast?",
+    "eu": "Zure material digitalek tamaina, kolorea eta kontrastea pertsonalizatzea ahalbidetzen al dute?",
+    "la": "Sinuntne materiae tuae digitales magnitudinem, colorem et contrastum accommodare?"
+  },
+  {
+    "id": 3,
+    "principle": "representation",
+    "es": "¿Compartes la información esencial en audio, tacto y modelos además de texto e imágenes?",
+    "en": "Do you share essential information in audio, touch, and models in addition to text and images?",
+    "eu": "Funtsezko informazioa audioan, ukituan eta ereduetan partekatzen al duzu, testuaz eta irudiez gain?",
+    "la": "Communicasne informationem essentialem per auditum, tactum et exempla praeter textum et imagines?"
+  },
+  {
+    "id": 4,
+    "principle": "representation",
+    "es": "¿Compartes vocabulario clave y símbolos antes de la lección?",
+    "en": "Do you share key vocabulary and symbols before the lesson?",
+    "eu": "Gako-hiztegia eta sinboloak partekatzen al dituzu ikasgaiaren aurretik?",
+    "la": "Communicasne vocabularium clavem et symbola ante lectionem?"
+  },
+  {
+    "id": 5,
+    "principle": "representation",
+    "es": "¿Conectas tu materia explícitamente con lo que aprenden en otras clases?",
+    "en": "Do you explicitly connect your subject with what they learn in other classes?",
+    "eu": "Zure irakasgaia esplizituki lotzen al duzu beste klase batzuetan ikasten dutenarekin?",
+    "la": "Nectisne materiam tuam expressis verbis cum iis quae in aliis classibus discunt?"
+  },
+  {
+    "id": 6,
+    "principle": "representation",
+    "es": "¿Tus materiales tienen sesgos o estereotipos que excluyen a algunos alumnos?",
+    "en": "Do your materials have biases or stereotypes that exclude some students?",
+    "eu": "Zure materialek badute ikasle batzuk baztertzen dituzten alborapenik edo estereotiporik?",
+    "la": "Habentne materiae tuae propensiones aut stereotypas quae aliquos discipulos excludant?"
+  },
+  {
+    "id": 7,
+    "principle": "representation",
+    "es": "¿Las identidades, idiomas y realidades familiares de tus alumnos aparecen en los materiales?",
+    "en": "Do your students' identities, languages, and family realities appear in the materials?",
+    "eu": "Zure ikasleen identitateak, hizkuntzak eta familia-errealitateak agertzen al dira materialetan?",
+    "la": "Apparentne identitates, linguae et res familiares discipulorum tuorum in materiis?"
+  },
+  {
+    "id": 8,
+    "principle": "representation",
+    "es": "¿Ofreces alternativas táctiles o visuales para información auditiva?",
+    "en": "Do you offer tactile or visual alternatives for auditory information?",
+    "eu": "Informazio auditiborako alternatiba taktilen bat edo bisualen bat eskaintzen al duzu?",
+    "la": "Offersne alternationes tactiles aut visuales pro informatione auditiva?"
+  },
+  {
+    "id": 9,
+    "principle": "representation",
+    "es": "¿Tus aulas son predecibles con pictogramas y horarios visuales?",
+    "en": "Are your classrooms predictable with pictograms and visual schedules?",
+    "eu": "Zure ikasgelak aurreikusgarriak al dira piktogramekin eta ordutegi bisualekin?",
+    "la": "Suntne aulae tuae praedicibiles cum pictogrammatibus et horariis visualibus?"
+  },
+  {
+    "id": 10,
+    "principle": "representation",
+    "es": "¿Tu programación de Primaria tiene múltiples opciones de ejecución o currículos paralelos?",
+    "en": "Does your Primary programming have multiple options for execution or parallel curricula?",
+    "eu": "Zure Lehen Hezkuntzako programazioak exekuzio-aukera anitz edo curriculum paraleloak al ditu?",
+    "la": "Habetne tua programmatio Primariae multiplices optiones exsecutionis an curricula parallela?"
+  },
+  {
+    "id": 11,
+    "principle": "representation",
+    "es": "¿Ofreces rincones con materiales diversos para interactuar con la información?",
+    "en": "Do you offer corners with diverse materials to interact with the information?",
+    "eu": "Informazioarekin interaktuatzeko material anitzeko txokoak eskaintzen al dituzu?",
+    "la": "Offersne angulos cum materiis diversis ad cum informatione interagendum?"
+  },
+  {
+    "id": 12,
+    "principle": "representation",
+    "es": "¿El diseño curricular es de \"talla única\" o adaptable a cada estudiante?",
+    "en": "Is the curriculum design \"one-size-fits-all\" or adaptable to each student?",
+    "eu": "Curriculum-diseinua \"neurri bakarrekoa\" al da edo ikasle bakoitzari egokitzeko modukoa?",
+    "la": "Estne consilium studiorum \"unius mensurae\" an accommodabile unicuique discipulo?"
+  },
+  {
+    "id": 13,
+    "principle": "action_expression",
+    "es": "¿Qué haces para que tus alumnos gestionen su propio aprendizaje?",
+    "en": "What do you do to help your students manage their own learning?",
+    "eu": "Zer egiten duzu zure ikasleek beren ikaskuntza kudea dezaten?",
+    "la": "Quid facis ut discipuli tui suam ipsorum doctrinam administrent?"
+  },
+  {
+    "id": 14,
+    "principle": "action_expression",
+    "es": "¿Das libertad para expresar lo aprendido en vídeo, mural, podcast o dramatización?",
+    "en": "Do you give freedom to express what has been learned in video, mural, podcast, or dramatization?",
+    "eu": "Askatasuna ematen al duzu ikasitakoa bideoan, horma-irudian, podcastean edo dramatizazioan adierazteko?",
+    "la": "Dasne libertatem exprimendi quae docta sunt per videogramma, murale, podcast aut dramatizationem?"
+  },
+  {
+    "id": 15,
+    "principle": "action_expression",
+    "es": "¿Ofreces andamiajes que se retiran cuando ganan autonomía?",
+    "en": "Do you offer scaffolds that are withdrawn when they gain autonomy?",
+    "eu": "Autonomia irabazten dutenean kentzen diren aldamiatzeak eskaintzen al dituzu?",
+    "la": "Offersne adminicula quae retrahuntur cum autonomiam adipiscuntur?"
+  },
+  {
+    "id": 16,
+    "principle": "action_expression",
+    "es": "¿Descompones metas complejas en objetivos alcanzables a corto plazo?",
+    "en": "Do you break down complex goals into achievable short-term objectives?",
+    "eu": "Helburu konplexuak epe laburrera lortzeko moduko helburuetan deskonposatzen al dituzu?",
+    "la": "Decomponisne metas implicatas in proposita assequibilia brevi tempore?"
+  },
+  {
+    "id": 17,
+    "principle": "action_expression",
+    "es": "¿Tu aula es físicamente accesible para respuestas y navegación variadas?",
+    "en": "Is your classroom physically accessible for varied responses and navigation?",
+    "eu": "Zure ikasgela fisikoki irisgarria al da erantzun eta nabigazio askotarikoetarako?",
+    "la": "Estne aula tua physice accessibilis ad responsiones et navigationes varias?"
+  },
+  {
+    "id": 18,
+    "principle": "action_expression",
+    "es": "¿Sustituyes el lápiz por materiales manipulativos en tareas lógicas?",
+    "en": "Do you replace the pencil with manipulative materials in logical tasks?",
+    "eu": "Logika-atazetan arkatza material manipulatiboekin ordezkatzen al duzu?",
+    "la": "Substituisne stylum materiis manipulabilibus in pensis logicis?"
+  },
+  {
+    "id": 19,
+    "principle": "action_expression",
+    "es": "¿Integra pensamiento computacional con Scratch para crear, no solo consumir?",
+    "en": "Do you integrate computational thinking with Scratch to create, not just consume?",
+    "eu": "Pentsamendu konputazionala Scratch-ekin integratzen al duzu sortzeko, ez soilik kontsumitzeko?",
+    "la": "Integrasne cogitationem computationalem cum Scratch ad creandum, non solum consumendum?"
+  },
+  {
+    "id": 20,
+    "principle": "action_expression",
+    "es": "¿Usas dianas visuales para que alumnos no escritores autoevalúen?",
+    "en": "Do you use visual targets so that non-writing students can self-evaluate?",
+    "eu": "Ikono bisualak erabiltzen al dituzu idazten ez duten ikasleek autoebaluazioa egin dezaten?",
+    "la": "Utisne scopos visuales ut discipuli non scribentes se aestimare possint?"
+  },
+  {
+    "id": 21,
+    "principle": "engagement",
+    "es": "¿Involucras al alumnado en decidir metas y actividades según sus intereses?",
+    "en": "Do you involve students in deciding goals and activities according to their interests?",
+    "eu": "Ikasleak helburuak eta jarduerak beren interesen arabera erabakitzen inplikatzen al dituzu?",
+    "la": "Involvisne discipulos in decernendis metas et actus secundum eorum commoda?"
+  },
+  {
+    "id": 22,
+    "principle": "engagement",
+    "es": "¿Tus tareas son auténticas y conectadas con el mundo real?",
+    "en": "Are your tasks authentic and connected to the real world?",
+    "eu": "Zure lanak benetakoak eta mundu errealarekin lotuak al dira?",
+    "la": "Suntne pensa tua vera et mundo reali connexa?"
+  },
+  {
+    "id": 23,
+    "principle": "engagement",
+    "es": "¿Todos tus alumnos se sienten representados en el currículo?",
+    "en": "Do all your students feel represented in the curriculum?",
+    "eu": "Zure ikasle guztiak curriculumean ordezkatuta sentitzen al dira?",
+    "la": "Sentiuntne omnes discipuli tui se repraesentatos in curriculo?"
+  },
+  {
+    "id": 24,
+    "principle": "engagement",
+    "es": "¿Usas la \"escalera de metacognición\" para analizar cómo aprenden?",
+    "en": "Do you use the \"metacognition ladder\" to analyze how they learn?",
+    "eu": "\"Metakognizio-eskailera\" erabiltzen al duzu nola ikasten duten aztertzeko?",
+    "la": "Uterisne \"scala metacognitionis\" ad analysandum quomodo discant?"
+  },
+  {
+    "id": 25,
+    "principle": "engagement",
+    "es": "¿En tu aula el error es oportunidad de aprendizaje o motivo de sanción?",
+    "en": "In your classroom, is error an opportunity for learning or a reason for sanction?",
+    "eu": "Zure ikasgelan errorea ikasteko aukera ala zigor-arrazoia da?",
+    "la": "In aula tua, estne error opportunitas discendi an causa sanctionis?"
+  },
+  {
+    "id": 26,
+    "principle": "engagement",
+    "es": "¿Fomentas comunidades donde se sientan responsables del éxito de sus compañeros?",
+    "en": "Do you foster communities where they feel responsible for the success of their classmates?",
+    "eu": "Beren kideen arrakastaren arduradun sentitzen diren komunitateak sustatzen al dituzu?",
+    "la": "Fovesne communitates ubi se responsabiles successus sociorum sentiant?"
+  },
+  {
+    "id": 27,
+    "principle": "engagement",
+    "es": "¿Tu retroalimentación es específica para mejorar o solo notas numéricas?",
+    "en": "Is your feedback specific for improvement or just numerical grades?",
+    "eu": "Zure feedback-a hobetzeko berariazkoa al da ala zenbakizko notak soilik?",
+    "la": "Estne feedback tuum specificum ad meliorandum an solum notae numericae?"
+  },
+  {
+    "id": 28,
+    "principle": "engagement",
+    "es": "¿Enseñas estrategias para gestionar frustración y ansiedad ante desafíos?",
+    "en": "Do you teach strategies to manage frustration and anxiety in the face of challenges?",
+    "eu": "Erronken aurreko frustrazioa eta antsietatea kudeatzeko estrategiak irakasten al dituzu?",
+    "la": "Docesne strategies ad frustrationem et anxietatem regendam ante provocationes?"
+  },
+  {
+    "id": 29,
+    "principle": "engagement",
+    "es": "¿Mantienes altas expectativas para todos independientemente de su origen?",
+    "en": "Do you maintain high expectations for everyone regardless of their background?",
+    "eu": "Itxaropen handiak mantentzen al dituzu guztientzat, jatorria edozein dela ere?",
+    "la": "Tenestne altas exspectationes de omnibus undecumque incipiant?"
+  },
+  {
+    "id": 30,
+    "principle": "engagement",
+    "es": "¿Fomentas tutoría entre iguales para aprender colaborativamente?",
+    "en": "Do you foster peer tutoring to learn collaboratively?",
+    "eu": "Ikasleen arteko tutoretza sustatzen al duzu elkarlanean ikasteko?",
+    "la": "Fovesne tutelam inter pares ad collaborativiter discendum?"
+  },
+  {
+    "id": 31,
+    "principle": "engagement",
+    "es": "¿Diseñas experiencias que promuevan alegría y juego como motores de aprendizaje?",
+    "en": "Do you design experiences that promote joy and play as drivers of learning?",
+    "eu": "Poza eta jolasa ikaskuntzaren motor gisa sustatzen dituzten esperientziak diseinatzen al dituzu?",
+    "la": "Designasne experientias quae promoveant gaudium et ludum ut motores discendi?"
+  },
+  {
+    "id": 32,
+    "principle": "engagement",
+    "es": "¿Ayudas a descomponer metas grandes en misiones diarias exitosas?",
+    "en": "Do you help break down large goals into successful daily missions?",
+    "eu": "Helburu handiak eguneroko misio arrakastatsuetan deskonposatzen laguntzen al duzu?",
+    "la": "Adjuvasne metas magnas in missiones diurnas prosperas decomponere?"
+  },
+  {
+    "id": 33,
+    "principle": "engagement",
+    "es": "¿Buscas participación activa de familias en el aula?",
+    "en": "Do you look for active family participation in the classroom?",
+    "eu": "Familien parte-hartze aktiboa bilatzen al duzu ikasgelan?",
+    "la": "Quaerisne participationem activam familiarum in aula?"
+  },
+  {
+    "id": 34,
+    "principle": "engagement",
+    "es": "¿Formas aprendices expertos: motivados, ingeniosos y autónomos?",
+    "en": "Do you form expert learners: motivated, resourceful, and autonomous?",
+    "eu": "Ikasle adituak trebatzen al dituzu: motibatuak, bizkorrak eta autonomoak?",
+    "la": "Formasne discentes expertos: motivatos, ingeniosos et autonomos?"
+  },
+  {
+    "id": 35,
+    "principle": "engagement",
+    "es": "¿Usas \"cajas de vida\" para conectar experiencias personales con contenidos?",
+    "en": "Do you use \"life boxes\" to connect personal experiences with content?",
+    "eu": "\"Bizitza-kaxak\" erabiltzen al dituzu esperientzia pertsonalak edukiekin lotzeko?",
+    "la": "Uterisne \"capsis vitae\" ad nectendas experientias personales cum contentis?"
+  },
+  {
+    "id": 36,
+    "principle": "engagement",
+    "es": "¿Fomentas asambleas para que opinen y decidan sobre lo que les afecta?",
+    "en": "Do you foster assemblies so they can express opinions and decide on matters that affect them?",
+    "eu": "Batzarrak sustatzen al dituzu eragiten dieten gaien inguruan iritzia eman eta eraba ditzaten?",
+    "la": "Fovesne concilia ut pueri opinentur et decernant de iis quae eos afficiunt?"
+  },
+  {
+    "id": 37,
+    "principle": "engagement",
+    "es": "¿Empleas cuentos para modelar autorregulación y gestión emocional?",
+    "en": "Do you use stories to model self-regulation and emotional management?",
+    "eu": "Ipuinak erabiltzen al dituzu autorregulazioa eta kudeaketa emozionala modelatzeko?",
+    "la": "Adhibesne fabulas ad regulae sui et administrationis emotionalis fingendam?"
+  },
+  {
+    "id": 38,
+    "principle": "engagement",
+    "es": "¿Planteas juegos de rol sobre situaciones reales del barrio o colegio?",
+    "en": "Do you propose role-playing games about real situations in the neighborhood or school?",
+    "eu": "Auzoko edo eskolako egoera errealei buruzko rol-jokoak planteatzen al dituzu?",
+    "la": "Proponisne ludos personarum de situationibus realibus viciniae aut scholae?"
+  },
+  {
+    "id": 39,
+    "principle": "engagement",
+    "es": "¿Involucras activamente a las familias en el aula?",
+    "en": "Do you actively involve families in the classroom?",
+    "eu": "Familiak ikasgelan modu aktiboan inplikatzen al dituzu?",
+    "la": "Involvisne active familias in aula?"
+  },
+  {
+    "id": 40,
+    "principle": "engagement",
+    "es": "¿Tu práctica diaria forma aprendices autónomos y motivados de por vida?",
+    "en": "Does your daily practice form autonomous and motivated lifelong learners?",
+    "eu": "Zure eguneroko praktikak bizitza osorako ikasle autonomo eta motibatuak trebatzen al ditu?",
+    "la": "Formatne tua praxis diurna discentes autonomos et motivatos pro tota vita?"
+  }
+]

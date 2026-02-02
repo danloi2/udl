@@ -16,39 +16,41 @@
     strategic: strategicLogo
   };
 
+  import { link } from 'svelte-spa-router';
+
   $: principle = network.principle;
   $: logo = brainLogos[network.id as keyof typeof brainLogos];
   $: networkLabel = network.why || network.what || network.how;
 </script>
 
-<div class="px-4 py-10 flex flex-col items-center gap-6 shadow-md transition-all duration-500 rounded-t-xl h-full justify-center" style="background-color: {principle.color || '#666'}">
+<a href="/detail/{principle.id}" use:link class="px-4 py-6 md:py-10 flex flex-col items-center gap-2 md:gap-6 shadow-md transition-all duration-500 rounded-t-xl h-full justify-center hover:opacity-95 print:py-2 print:gap-1" style="background-color: {principle.color || '#666'}">
   <!-- Logo Container with Solid White Background for better visibility -->
-  <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-2xl p-4 transform hover:scale-110 transition-transform duration-300 border border-white/50 shrink-0">
+  <div class="w-12 h-12 md:w-20 md:h-20 flex items-center justify-center rounded-xl md:rounded-2xl bg-white shadow-2xl p-2 md:p-4 transform hover:scale-110 transition-transform duration-300 border border-white/50 shrink-0 print:w-8 print:h-8 print:p-1 print:rounded-lg">
     <img src={logo} alt={t(network.name, currentLang)} class="w-full h-full object-contain" />
   </div>
   
   <div class="text-center flex flex-col items-center">
     {#if principle.preDescription}
-      <p class="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-1">
+      <span class="text-[8px] md:text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-0.5 md:mb-1 pre-description-text">
         {t(principle.preDescription, currentLang)}
-      </p>
+      </span>
     {/if}
-    <h2 class="text-xl font-black text-white leading-tight mb-4 tracking-tight">
+    <h2 class="text-lg md:text-xl font-black text-white leading-tight mb-1 md:mb-4 tracking-tight print:mb-0 print:text-base">
       {t(principle.name, currentLang)}
     </h2>
 
     <!-- Network Name Badge (High Contrast) -->
     <div 
-      class="px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl bg-white text-gray-900 border-none inline-block"
+      class="px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest shadow-xl bg-white text-gray-900 border-none inline-block"
     >
       {t(network.name, currentLang)}
     </div>
 
     <!-- Network Purpose Text -->
     {#if networkLabel}
-      <p class="text-[11px] font-black italic uppercase tracking-widest mt-4 text-white/90">
+      <p class="text-[9px] md:text-[11px] font-black italic uppercase tracking-widest mt-2 md:mt-4 text-white/90 network-purpose-text">
         {t(networkLabel, currentLang)}
       </p>
     {/if}
   </div>
-</div>
+</a>

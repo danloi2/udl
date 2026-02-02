@@ -8,24 +8,69 @@ import type {
   Guideline,
   Consideration,
   Example,
+  Activity,
 } from '../types';
-import udlJson from '../data/udl-core.json';
+import udlJson from '../data/json/udl-core.json';
+import {
+  NIVELES,
+  AREAS_INFANTIL,
+  AREAS_PRIMARIA,
+  AREAS_ESO,
+  BACHILLERATO_COMUNES,
+  BACHILLERATO_MODALIDADES,
+  AMBITOS_UNIVERSIDAD,
+} from '../data/constants/constants';
 
 // Load and parse UDL data
 const rawData = udlJson as UDLRoot;
 export const udlData = writable<UDLData>(rawData.udl);
 
-import g1 from '../data/udl-guideline-1.json';
-import g2 from '../data/udl-guideline-2.json';
-import g3 from '../data/udl-guideline-3.json';
-import g4 from '../data/udl-guideline-4.json';
-import g5 from '../data/udl-guideline-5.json';
-import g6 from '../data/udl-guideline-6.json';
-import g7 from '../data/udl-guideline-7.json';
-import g8 from '../data/udl-guideline-8.json';
-import g9 from '../data/udl-guideline-9.json';
+// Import Activities dynamically
+const activityModules = import.meta.glob('../data/json/activities/*.json', { eager: true });
+const allActivityFiles = Object.values(activityModules).map((mod: any) => mod.default || mod);
 
-const allExamplesFiles = [g1, g2, g3, g4, g5, g6, g7, g8, g9];
+// Helper to resolve Level and Area from explicit codes in JSON (e.g., "PRI", "MAT")
+function resolveMetadata(levelCode: string, areaCode: string) {
+  const level = Object.values(NIVELES).find((l) => l.id === levelCode);
+  let area = null;
+
+  if (levelCode === 'PRI') {
+    area = Object.values(AREAS_PRIMARIA).find((a) => a.id === areaCode);
+  } else if (levelCode === 'ESO') {
+    area = Object.values(AREAS_ESO).find((a) => a.id === areaCode);
+  } else if (levelCode === 'BAC') {
+    area = Object.values(BACHILLERATO_COMUNES).find((a) => a.id === areaCode);
+    if (!area) {
+      for (const modal of Object.values(BACHILLERATO_MODALIDADES)) {
+        const found = Object.values(modal).find((a: any) => a.id === areaCode);
+        if (found) {
+          area = found;
+          break;
+        }
+      }
+    }
+  } else if (
+    levelCode === 'INF' ||
+    levelCode === 'CRE' ||
+    levelCode === 'DES' ||
+    levelCode === 'COM'
+  ) {
+    area = Object.values(AREAS_INFANTIL).find((a) => a.id === areaCode);
+  }
+
+  if (!area) {
+    const allAreas = [
+      ...Object.values(AREAS_INFANTIL),
+      ...Object.values(AREAS_PRIMARIA),
+      ...Object.values(AREAS_ESO),
+      ...Object.values(BACHILLERATO_COMUNES),
+      ...Object.values(AMBITOS_UNIVERSIDAD),
+    ];
+    area = allAreas.find((a) => a.id === areaCode);
+  }
+
+  return { level, area };
+}
 
 // Create indexed data for fast lookups
 export const udlIndex = derived(udlData, ($udlData) => {
@@ -35,36 +80,100 @@ export const udlIndex = derived(udlData, ($udlData) => {
     guidelines: new Map(),
     considerations: new Map(),
     examples: new Map(),
+    activities: new Map(),
   };
 
   $udlData.networks.forEach((network: Network) => {
     index.networks.set(network.id, network);
-
     const principle = network.principle;
     index.principles.set(principle.id, principle);
-
     principle.guidelines.forEach((guideline: Guideline) => {
       index.guidelines.set(guideline.id, guideline);
-
       guideline.considerations.forEach((consideration: Consideration) => {
         index.considerations.set(consideration.id, consideration);
       });
     });
   });
 
-  // Index examples
-  allExamplesFiles.forEach((gFile: any) => {
-    gFile.considerations.forEach((cGroup: any) => {
-      cGroup.examples.forEach((example: any) => {
-        index.examples.set(example.id, example as Example);
-      });
-    });
+  // Process Activities
+  allActivityFiles.forEach((activityData: any) => {
+    const meta = resolveMetadata(activityData.gradeLevel, activityData.subject);
+
+    const activity: Activity = {
+      id: activityData.id,
+      code: activityData.code,
+      gradeLevel: meta.level
+        ? meta.level.name
+        : {
+            es: activityData.gradeLevel,
+            en: activityData.gradeLevel,
+            eu: activityData.gradeLevel,
+            la: activityData.gradeLevel,
+          },
+      subject: meta.area
+        ? meta.area.name
+        : {
+            es: activityData.subject,
+            en: activityData.subject,
+            eu: activityData.subject,
+            la: activityData.subject,
+          },
+      title: activityData.title,
+      duaAdaptations: activityData.duaAdaptations,
+    };
+
+    index.activities.set(activity.id, activity);
+    if (activity.code !== activity.id) {
+      index.activities.set(activity.code, activity);
+    }
+
+    Object.entries(activityData.duaAdaptations as Record<string, any>).forEach(
+      ([code, adaptationText]) => {
+        let considerationId = null;
+        let considerationColor = '#666';
+        for (const [id, cons] of index.considerations) {
+          if (cons.code === code) {
+            considerationId = id;
+            considerationColor = cons.color || '#666';
+            break;
+          }
+        }
+
+        if (considerationId) {
+          const uniqueId = `${activityData.code}-${considerationId}`;
+          const example: Example = {
+            id: uniqueId,
+            code: activityData.code,
+            color: considerationColor,
+            educationalLevel: meta.level
+              ? meta.level.name
+              : {
+                  es: activityData.gradeLevel,
+                  en: activityData.gradeLevel,
+                  eu: activityData.gradeLevel,
+                  la: activityData.gradeLevel,
+                },
+            curricularArea: meta.area
+              ? meta.area.name
+              : {
+                  es: activityData.subject,
+                  en: activityData.subject,
+                  eu: activityData.subject,
+                  la: activityData.subject,
+                },
+            activity: activityData.title,
+            designOptions: adaptationText,
+            webTools: [],
+          };
+          index.examples.set(example.id, example);
+        }
+      }
+    );
   });
 
   return index;
 });
 
-// Helper functions
 export function getNetworkById(id: string, index: UDLIndex): Network | undefined {
   return index.networks.get(id);
 }
@@ -81,12 +190,10 @@ export function getConsiderationById(id: string, index: UDLIndex): Consideration
   return index.considerations.get(id);
 }
 
-// Get network for a principle
 export function getNetworkForPrinciple(principleId: string, data: UDLData): Network | undefined {
   return data.networks.find((n: Network) => n.principle.id === principleId);
 }
 
-// Get principle for a guideline
 export function getPrincipleForGuideline(
   guidelineId: string,
   data: UDLData
@@ -99,7 +206,6 @@ export function getPrincipleForGuideline(
   return undefined;
 }
 
-// Get guideline for a consideration
 export function getGuidelineForConsideration(
   considerationId: string,
   data: UDLData
@@ -118,21 +224,20 @@ export function getExampleById(id: string, index: UDLIndex): Example | undefined
   return index.examples.get(id);
 }
 
-// Get consideration for an example
 export function getConsiderationForExample(
   exampleId: string,
   index: UDLIndex
 ): Consideration | undefined {
-  // Extract considerationId from exampleId (e.g., "1-1-1" -> "1-1")
   const parts = exampleId.split('-');
   if (parts.length >= 2) {
-    const considerationId = `${parts[0]}-${parts[1]}`;
-    return index.considerations.get(considerationId);
+    const suffix = `${parts[parts.length - 2]}-${parts[parts.length - 1]}`;
+    if (index.considerations.has(suffix)) {
+      return index.considerations.get(suffix);
+    }
   }
   return undefined;
 }
 
-// Get principle for a consideration
 export function getPrincipleForConsideration(
   considerationId: string,
   data: UDLData
@@ -144,14 +249,12 @@ export function getPrincipleForConsideration(
   return undefined;
 }
 
-// Get network for a guideline
 export function getNetworkForGuideline(guidelineId: string, data: UDLData): Network | undefined {
   return data.networks.find((n: Network) =>
     n.principle.guidelines.some((g: Guideline) => g.id === guidelineId)
   );
 }
 
-// Get network for a consideration
 export function getNetworkForConsideration(
   considerationId: string,
   data: UDLData
@@ -161,4 +264,8 @@ export function getNetworkForConsideration(
     return getNetworkForGuideline(guideline.id, data);
   }
   return undefined;
+}
+
+export function getActivityById(id: string, index: UDLIndex): Activity | undefined {
+  return index.activities.get(id);
 }

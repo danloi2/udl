@@ -1,158 +1,145 @@
 <script lang="ts">
-    import { link } from 'svelte-spa-router';
+  import { onMount, onDestroy } from 'svelte';
+  import { link } from 'svelte-spa-router';
+  import { fade } from 'svelte/transition';
+  import questions from '../data/json/home-questions.json';
+  import { ArrowRight } from 'lucide-svelte';
   import { language, t } from '../stores/language';
   import { ui } from '../stores/ui';
   import { udlData } from '../stores/udlData';
-  import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
-  import { LayoutGrid, Search } from 'lucide-svelte';
   import type { Language } from '../types';
-
-  // Import assets
-  import udlLogo from '../assets/brains/udl_logo.svg';
-  import affectiveLogo from '../assets/brains/affective_logo.svg';
-  import recognitionLogo from '../assets/brains/recognition_logo.svg';
-  import strategicLogo from '../assets/brains/strategic_logo.svg';
+  import LanguageSwitcher from '../components/LanguageSwitcher.svelte';
 
   let currentLang: Language;
+  let displayedText = "";
+  let currentQuestionIndex = -1;
+  let isTyping = false;
+  let cursorVisible = true;
+  let timeoutId: any;
+  let cursorInterval: any;
+
+  // Reactively derive themes from udl-core.json data
+  $: themeMap = $udlData.networks.reduce((acc, network) => {
+    const pId = network.principle.id;
+    acc[pId] = { color: network.color || '#000000' };
+    return acc;
+  }, {} as Record<string, { color: string }>);
+
+  // Fallback/Initial theme
+  let currentTheme = { color: '#078743' };
+
   language.subscribe((value) => {
+    if (currentLang !== value && !isTyping && currentQuestionIndex !== -1) {
+       displayedText = t(questions[currentQuestionIndex], value);
+    }
     currentLang = value;
   });
 
+  function getRandomQuestionIndex() {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * questions.length);
+    } while (newIndex === currentQuestionIndex && questions.length > 1);
+    return newIndex;
+  }
+
+  async function typeWriterLoop() {
+    currentQuestionIndex = getRandomQuestionIndex();
+    
+    const question = questions[currentQuestionIndex];
+    if (question.principle && themeMap[question.principle]) {
+      currentTheme = themeMap[question.principle];
+    }
+    
+    const fullText = t(question, currentLang);
+    isTyping = true;
+    displayedText = "";
+
+    for (let i = 0; i < fullText.length; i++) {
+      displayedText += fullText[i];
+      await new Promise(r => timeoutId = setTimeout(r, 20 + Math.random() * 30)); 
+    }
+
+    isTyping = false;
+    await new Promise(r => timeoutId = setTimeout(r, 4500));
+
+    isTyping = true;
+    while (displayedText.length > 0) {
+      displayedText = displayedText.slice(0, -1);
+      await new Promise(r => timeoutId = setTimeout(r, 10));
+    }
+    isTyping = false;
+    await new Promise(r => timeoutId = setTimeout(r, 600));
+    
+    typeWriterLoop();
+  }
+
+  onMount(() => {
+    cursorInterval = setInterval(() => {
+      cursorVisible = !cursorVisible;
+    }, 530);
+    typeWriterLoop();
+  });
+
+  onDestroy(() => {
+    clearTimeout(timeoutId);
+    clearInterval(cursorInterval);
+  });
 </script>
 
-<div class="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
-  <!-- Header -->
-  <div class="container mx-auto px-4 py-6">
-    <div class="flex justify-end">
-      <LanguageSwitcher />
-    </div>
+<div 
+  class="min-h-screen flex flex-col relative overflow-hidden transition-colors duration-1000 theme-bg-gradient"
+  style="--theme-color: {currentTheme.color}; --theme-color-5: {currentTheme.color}0D; --theme-color-10: {currentTheme.color}1A;"
+>
+  
+  <div class="absolute top-0 left-0 w-full p-6 z-50 flex justify-end">
+    <LanguageSwitcher />
   </div>
 
-  <!-- Hero Section -->
-  <div class="container mx-auto px-4 py-8 md:py-16">
-    <div class="text-center mb-12 flex flex-col items-center">
-      <img src={udlLogo} alt="UDL Logo" class="w-48 h-48 md:w-64 md:h-64 mb-6 hover:scale-105 transition-transform duration-500" />
-      <h1 class="text-5xl md:text-6xl font-black mb-2 tracking-tight bg-clip-text text-transparent bg-linear-to-r from-blue-700 via-purple-700 to-pink-700">
-        {t($udlData.title, currentLang)} ({t($udlData.acronym, currentLang)})
+  <div class="flex-1 flex flex-col items-center justify-center container mx-auto px-6 max-w-5xl relative z-10">
+    
+    <div class="min-h-[300px] flex items-center justify-center">
+      <h1 class="text-3xl md:text-5xl md:leading-tight font-black text-gray-800 tracking-tight drop-shadow-xs text-center">
+        {displayedText}<span class="theme-caret inline-block w-[3px] md:w-[5px] h-[30px] md:h-[48px] ml-1 align-middle {cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100"></span>
       </h1>
-      <p class="text-2xl md:text-3xl font-bold text-gray-500 mb-6 uppercase tracking-wider">
-        {t($udlData.version, currentLang)}
-      </p>
-      <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-medium leading-relaxed">
-        {t($udlData.goal, currentLang)}
-      </p>
     </div>
 
-
-    <!-- Floating Navigation Buttons -->
-    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-      <a
-        href="/model"
+    <div class="mt-20 flex justify-center fade-in">
+      <a 
+        href="/model" 
         use:link
-        class="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-blue-600 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
-        title={$ui.viewAction}
+        class="group relative inline-flex items-center gap-3 px-8 py-4 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-2xl hover:brightness-110 hover:-translate-y-1 transition-all duration-300 theme-button"
       >
-        <LayoutGrid class="w-6 h-6 mb-1" />
-        <span class="text-[10px] font-black uppercase tracking-widest">{$ui.viewAction}</span>
+        <span>{$ui.readyToTeach}</span>
+        <ArrowRight class="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+        <div class="absolute inset-0 rounded-full bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </a>
-      
-      <a
-        href="/explore"
-        use:link
-        class="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md text-blue-600 border border-white/20 shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
-        title={$ui.searchAction}
-      >
-        <Search class="w-6 h-6 mb-1" />
-        <span class="text-[10px] font-black uppercase tracking-widest">{$ui.searchAction}</span>
-      </a>
-    </div>
-
-    <!-- UDL Introduction Card with Colors -->
-    <div class="max-w-5xl mx-auto">
-      <div class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
-        <div class="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 px-8 py-10">
-          <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
-            {$ui.whatIsUDL}
-          </h2>
-        </div>
-        
-        <div class="px-8 py-10 space-y-10">
-          <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto font-medium">
-            {$ui.udlDescription}
-          </p>
-          
-          <div class="relative py-4">
-            <div class="absolute inset-0 flex items-center" aria-hidden="true">
-              <div class="w-full border-t border-gray-200"></div>
-            </div>
-            <div class="relative flex justify-center">
-              <span class="bg-white px-6 text-xl font-bold text-gray-900 uppercase tracking-widest italic">
-                {$ui.udlPrinciples}
-              </span>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Engagement -->
-            <a href="/detail/{$udlData.networks[0].principle.id}" use:link class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-green-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <div class="relative mb-6 w-24 h-24 flex items-center justify-center rounded-2xl bg-green-50 group-hover:bg-green-100 transition-colors">
-                <img src={affectiveLogo} alt="Affective Network" class="w-16 h-16 object-contain" />
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-green-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">1</div>
-              </div>
-              {#if $udlData.networks[0].principle.preDescription}
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter mb-1">
-                  {t($udlData.networks[0].principle.preDescription, currentLang)}
-                </p>
-              {/if}
-              <h3 class="text-xl font-bold mb-3 text-center" style="color: {$udlData.networks[0].color}">
-                {t($udlData.networks[0].principle.name, currentLang)}
-              </h3>
-              <p class="text-sm text-gray-600 text-center font-medium leading-relaxed">
-                {$ui.engagementWhy}
-              </p>
-            </a>
-            
-            <!-- Representation -->
-            <a href="/detail/{$udlData.networks[1].principle.id}" use:link class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-purple-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <div class="relative mb-6 w-24 h-24 flex items-center justify-center rounded-2xl bg-purple-50 group-hover:bg-purple-100 transition-colors">
-                <img src={recognitionLogo} alt="Recognition Network" class="w-16 h-16 object-contain" />
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-purple-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">2</div>
-              </div>
-              {#if $udlData.networks[1].principle.preDescription}
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter mb-1">
-                  {t($udlData.networks[1].principle.preDescription, currentLang)}
-                </p>
-              {/if}
-              <h3 class="text-xl font-bold mb-3 text-center" style="color: {$udlData.networks[1].color}">
-                {t($udlData.networks[1].principle.name, currentLang)}
-              </h3>
-              <p class="text-sm text-gray-600 text-center font-medium leading-relaxed">
-                {$ui.representationWhat}
-              </p>
-            </a>
-            
-            <!-- Action & Expression -->
-            <a href="/detail/{$udlData.networks[2].principle.id}" use:link class="group relative flex flex-col items-center rounded-2xl p-6 bg-white border border-gray-100 hover:border-blue-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <div class="relative mb-6 w-24 h-24 flex items-center justify-center rounded-2xl bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                <img src={strategicLogo} alt="Strategic Network" class="w-16 h-16 object-contain" />
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm">3</div>
-              </div>
-              {#if $udlData.networks[2].principle.preDescription}
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter mb-1">
-                  {t($udlData.networks[2].principle.preDescription, currentLang)}
-                </p>
-              {/if}
-              <h3 class="text-xl font-bold mb-3 text-center" style="color: {$udlData.networks[2].color}">
-                {t($udlData.networks[2].principle.name, currentLang)}
-              </h3>
-              <p class="text-sm text-gray-600 text-center font-medium leading-relaxed">
-                {$ui.actionExpressionHow}
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
 
   </div>
+
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div class="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-white/30 blur-3xl mix-blend-overlay animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-white/20 blur-3xl mix-blend-overlay"></div>
+  </div>
+
 </div>
+
+<style>
+  .theme-bg-gradient {
+    background-image: linear-gradient(to bottom right, var(--theme-color-5), var(--theme-color-10), var(--theme-color-5));
+  }
+  .theme-button {
+    background-color: var(--theme-color);
+  }
+  .theme-caret {
+    background-color: var(--theme-color);
+  }
+  .fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

@@ -2,7 +2,7 @@
 import { derived } from 'svelte/store';
 import { language } from './language';
 import { udlData } from './udlData';
-import uiTranslations from '../data/ui.json';
+import uiTranslations from '../data/json/ui.json';
 
 // Derived store that provides UI translations based on current language
 export const ui = derived([language, udlData], ([$language, $udlData]) => {
@@ -47,6 +47,7 @@ export const ui = derived([language, udlData], ([$language, $udlData]) => {
     engagementWhy: uiTranslations.home.engagementWhy[$language],
     representationWhat: uiTranslations.home.representationWhat[$language],
     actionExpressionHow: uiTranslations.home.actionExpressionHow[$language],
+    readyToTeach: uiTranslations.home.readyToTeach[$language],
 
     // Messages
     noResults: uiTranslations.messages.noResults[$language],
