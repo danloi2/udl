@@ -239,10 +239,10 @@
                
                {#if result.type === 'activity' || result.type === 'example'}
                  <div class="flex gap-1">
-                    <span class="text-[8px] px-1.5 py-0.5 font-black uppercase tracking-wider rounded bg-blue-50 text-blue-600 border border-blue-100">
+                    <span class="text-[8px] px-1.5 py-0.5 font-black uppercase tracking-wider rounded border bg-gray-100 text-gray-700 border-gray-200">
                      {t(result.educationalLevel, currentLang)}
                    </span>
-                   <span class="text-[8px] px-1.5 py-0.5 font-black uppercase tracking-wider rounded bg-purple-50 text-purple-600 border border-purple-100">
+                   <span class="text-[8px] px-1.5 py-0.5 font-black uppercase tracking-wider rounded border bg-gray-100 text-gray-700 border-gray-200">
                      {t(result.curricularArea, currentLang)}
                    </span>
                  </div>

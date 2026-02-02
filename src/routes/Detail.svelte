@@ -169,10 +169,10 @@
                               {activity.code}
                           </span>
                            <div class="flex gap-2">
-                               <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-black uppercase tracking-wider rounded-md border border-blue-100">
+                               <span class="px-2 py-1 text-xs font-black uppercase tracking-wider rounded-md border bg-gray-100 text-gray-700 border-gray-200">
                                    {t(activity.gradeLevel, currentLang)}
                                </span>
-                               <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-black uppercase tracking-wider rounded-md border border-purple-100">
+                               <span class="px-2 py-1 text-xs font-black uppercase tracking-wider rounded-md border bg-gray-100 text-gray-700 border-gray-200">
                                    {t(activity.subject, currentLang)}
                                </span>
                            </div>
@@ -232,7 +232,7 @@
                                                <a href={tool.url} target="_blank" rel="noopener noreferrer" 
                                                   class="flex items-center gap-3 px-3 py-2 bg-gray-50 hover:bg-white border border-gray-100 hover:border-blue-300 rounded-xl transition-all group shadow-sm hover:shadow-md">
                                                    {#if tool.logo}
-                                                       <img src={tool.logo} alt="" class="w-5 h-5 object-contain" />
+                                                       <img src={tool.logo} alt="" class="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-125" />
                                                    {/if}
                                                    <span class="text-sm font-bold text-gray-700 group-hover:text-blue-600">
                                                        {tool.name}
@@ -304,20 +304,20 @@
               <!-- Example Details -->
               <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-100">
-                    <h3 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-4">{$ui.educationalLevel}</h3>
+                  <div class="p-6 rounded-2xl border" style="background-color: {principle?.color}10; border-color: {principle?.color}30">
+                    <h3 class="text-xs font-black uppercase tracking-widest mb-4" style="color: {principle?.color}">{$ui.educationalLevel}</h3>
                     <div class="flex items-center gap-3">
-                      <div class="p-3 bg-white rounded-xl shadow-sm border border-blue-100">
-                        <Search class="w-6 h-6 text-blue-600" />
+                      <div class="p-3 bg-white rounded-xl shadow-sm border" style="border-color: {principle?.color}30">
+                        <Search class="w-6 h-6" style="color: {principle?.color}" />
                       </div>
                       <span class="text-xl font-bold text-gray-900">{t(example.educationalLevel, currentLang)}</span>
                     </div>
                   </div>
-                  <div class="p-6 rounded-2xl bg-purple-50/50 border border-purple-100">
-                    <h3 class="text-xs font-black uppercase tracking-widest text-purple-600 mb-4">{$ui.curricularArea}</h3>
+                  <div class="p-6 rounded-2xl border" style="background-color: {principle?.color}10; border-color: {principle?.color}30">
+                    <h3 class="text-xs font-black uppercase tracking-widest mb-4" style="color: {principle?.color}">{$ui.curricularArea}</h3>
                     <div class="flex items-center gap-3">
-                      <div class="p-3 bg-white rounded-xl shadow-sm border border-purple-100">
-                        <LayoutGrid class="w-6 h-6 text-purple-600" />
+                      <div class="p-3 bg-white rounded-xl shadow-sm border" style="border-color: {principle?.color}30">
+                        <LayoutGrid class="w-6 h-6" style="color: {principle?.color}" />
                       </div>
                       <span class="text-xl font-bold text-gray-900">{t(example.curricularArea, currentLang)}</span>
                     </div>
@@ -354,11 +354,11 @@
                         <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap gap-3">
                           {#each example.webTools as tool}
                             <a href={tool.url} target="_blank" rel="noopener noreferrer" 
-                               class="flex items-center gap-3 px-4 py-2.5 bg-white/10 hover:bg-white border border-white/20 hover:border-white rounded-xl transition-all group backdrop-blur-sm">
+                               class="flex items-center gap-3 px-4 py-2.5 bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-400 rounded-xl transition-all duration-300 group shadow-sm hover:shadow-md hover:scale-110">
                               {#if tool.logo}
-                                <img src={tool.logo} alt="" class="w-5 h-5 object-contain group-hover:invert-0 transition-all opacity-80 group-hover:opacity-100" />
+                                <img src={tool.logo} alt="" class="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-125" />
                               {/if}
-                              <span class="text-sm font-bold text-white group-hover:text-gray-900 transition-colors">
+                              <span class="text-sm font-bold text-gray-700 group-hover:text-blue-600 transition-colors">
                                 {tool.name}
                               </span>
                             </a>
@@ -501,8 +501,8 @@
                             <div class="flex items-center gap-3">
                               <span class="font-mono text-sm font-black" style="color: {example.color}">{example.code}</span>
                               <div class="flex gap-2">
-                                <span class="px-2 py-1 bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-wider rounded-md border border-blue-100">{t(example.educationalLevel, currentLang)}</span>
-                                <span class="px-2 py-1 bg-purple-50 text-purple-700 text-[10px] font-black uppercase tracking-wider rounded-md border border-purple-100">{t(example.curricularArea, currentLang)}</span>
+                                <span class="px-2 py-1 text-[10px] font-black uppercase tracking-wider rounded-md border bg-gray-100 text-gray-700 border-gray-200">{t(example.educationalLevel, currentLang)}</span>
+                                <span class="px-2 py-1 text-[10px] font-black uppercase tracking-wider rounded-md border bg-gray-100 text-gray-700 border-gray-200">{t(example.curricularArea, currentLang)}</span>
                               </div>
                             </div>
                           </div>
@@ -525,7 +525,7 @@
                                   <a href={tool.url} target="_blank" rel="noopener noreferrer" 
                                      class="flex items-center gap-2 px-2 py-1 bg-white hover:bg-blue-50 border border-gray-100 hover:border-blue-200 rounded-lg transition-all group shadow-sm">
                                     {#if tool.logo}
-                                      <img src={tool.logo} alt="" class="w-4 h-4 object-contain" />
+                                      <img src={tool.logo} alt="" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-125" />
                                     {/if}
                                     <span class="text-[11px] font-bold text-gray-600 group-hover:text-blue-600">
                                       {tool.name}
